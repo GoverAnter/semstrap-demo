@@ -1,0 +1,19 @@
+<div class="strap main responsive fluid container">
+  <h1 class="strap header dividing">{{ $t('products.title') }}<strap-button style="float: right; font-size: 1rem;" @click="openHelpWindow">{{ $t('common.help') }}</strap-button><strap-button style="float: right; font-size: 1rem;" @click="openKnowMoreWindow">{{ $t('common.knowMore') }}</strap-button></h1>
+  <strap-alert spaced v-show="loading"><strap-icon icon="spinner" animation="pulse" size="3x" slot="icon" />{{ $t('common.loading') }}</strap-alert>
+  <div v-show="!loading" class="strap flex-grid" style="flex: 0;">
+    <div class="row">
+      <strap-button :toggle-model.sync="edit" flat color="indigo">{{ $t('common.pageEditMode') }}</strap-button>
+      <strap-button @click="$refs.pooledDP.openPremadeWindow()" flat color="brown">{{ $t('common.addElement') }}</strap-button>
+      <strap-button @click="$refs.pooledDP.openBindingsWindow()" flat color="purple">{{ $t('common.bindingsWindow') }}</strap-button>
+    </div>
+  </div>
+  <strap-pooled-dynamic-page v-if="!loading"
+    :edit="edit"
+    :pool="pool"
+    :elements="elements"
+    :page-data="product"
+    :bindings="bindings"
+    :user-bindings="userBindings"
+    ref="pooledDP" />
+</div>

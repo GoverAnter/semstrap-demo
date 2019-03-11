@@ -1,0 +1,5 @@
+<div class="strap main responsive fluid container">
+  <h1 class="strap header dividing">{{ $t('sales.title') }}</h1>
+  <strap-alert spaced v-show="loading"><strap-icon icon="spinner" animation="pulse" size="3x" slot="icon" />{{ $t('common.loading') }}</strap-alert>
+  <strap-table v-if="!loading" :items="sales" :columns="columns" selectable enable-row-events @row-click="goToSale" pagination />
+</div>

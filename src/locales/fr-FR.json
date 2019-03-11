@@ -1,0 +1,118 @@
+{
+  "common": {
+    "lang": "Langue",
+    "loading": "Patientez pendant que nous chargeons tout pour vous !",
+    "pageEditMode": "Mode édition de page",
+    "addElement": "Ajouter un élément",
+    "bindingsWindow": "Champs de la page",
+    "knowMore": "En savoir plus",
+    "help": "Aide",
+    "dynamicPageHelp": "Aide sur les pages dynamiques",
+    "goToSource": "Vous voulez voir le code source ? <a class=\"strap link\" href=\"https://github.com/GoverAnter/semstrap-demo\">Cliquez ici !</a>"
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "totalSales": {
+      "identifier": "Ventes effectuées",
+      "description": "Le nombre de ventes effectuées jusqu'à présent."
+    },
+    "totalProducts": {
+      "identifier": "Produits",
+      "description": "Le nombre de produit enregistré."
+    },
+    "totalEarnings": {
+      "identifier": "Gains totaux",
+      "description": "Le total cumulé de toutes les ventes."
+    },
+    "totalProductsSold": {
+      "identifier": "Produits vendus",
+      "description": "Le total cumulé de tout les produits vendus."
+    },
+    "averageProductsPerSale": {
+      "identifier": "Produits par ventes",
+      "description": "En moyenne le nombre de produits par vente."
+    },
+    "bestSeller": {
+      "identifier": "Produit le plus vendu",
+      "description": "Le meilleur des meilleurs."
+    },
+    "salesPerDay": {
+      "identifier": "Ventes par jour",
+      "description": "Le nombre de ventes par jour."
+    },
+    "soldPerDay": {
+      "identifier": "Produits vendus par jour",
+      "description": "Le nombre de produits vendus par jour."
+    },
+    "earningsPerDay": {
+      "identifier": "Gains par jour",
+      "description": "Le total des gains chaque jour en moyenne."
+    }
+  },
+  "products": {
+    "title": "Produits",
+    "priceWithoutVAT": "Prix HT",
+    "VAT": "TVA",
+    "priceWithVAT": "Prix TTC",
+    "productList": "Liste des produits",
+    "bindings": {
+      "product": {
+        "reference": {
+          "identifier": "Référence",
+          "description": "Notre référence interne pour le produit. Ne correspond pas à la référence fournisseur."
+        },
+        "name": {
+          "identifier": "Nom du produit",
+          "description": "Le nom commun du produit."
+        },
+        "description": {
+          "identifier": "Description",
+          "description": "Une description simple du produit."
+        },
+        "price": {
+          "identifier": "Prix de vente",
+          "description": "Le prix auquel nous vendons le produit, hors taxes."
+        }
+      },
+      "sale": {
+        "date": {
+          "identifier": "Date",
+          "description": "La date à laquelle la vente a été effectuée."
+        },
+        "billingId": {
+          "identifier": "Identifiant facture",
+          "description": "L\"identifiant unique assigné à la facture."
+        },
+        "customer": {
+          "identifier": "Client",
+          "description": "Le nom du client à qui correspond cette facture."
+        },
+        "products": {
+          "identifier": "Produits",
+          "description": "Les produits que le client a acheté."
+        },
+        "total": {
+          "identifier": "Total",
+          "description": "La somme total de la transaction."
+        }
+      }
+    }
+  },
+  "sales": {
+    "title": "Ventes",
+    "totalExclVAT": "Total HT",
+    "productCount": "Produits vendus",
+    "date": "Date de la vente",
+    "customer": "Client",
+    "salesList": "Liste des ventes"
+  },
+  "about": {
+    "title": "A propos de Semstrap",
+    "demoWindow": {
+      "title": "Fenêtre démo"
+    }
+  },
+  "aboutMe": {
+    "title": "A propos de moi"
+  }
+}

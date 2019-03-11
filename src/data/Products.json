@@ -1,0 +1,142 @@
+[
+  {
+    "id": "764635af-5f8e-43e2-993d-0b05bcc12496",
+    "reference": "RDBALL001",
+    "name": "Red balloon",
+    "description": "Balloon in red.",
+    "price": "€0.99"
+  },
+  {
+    "id": "b089f0c9-1b28-4952-801c-401acc0f5557",
+    "reference": "BLBALL001",
+    "name": "Blue balloon",
+    "description": "Balloon in blue.",
+    "price": "€0.99"
+  },
+  {
+    "id": "c15f68a0-aed1-4ec8-89c1-afa30498ea79",
+    "reference": "WHBALL001",
+    "name": "White balloon",
+    "description": "Balloon in white.",
+    "price": "€0.99"
+  },
+  {
+    "id": "966b897b-6660-4fe3-a61b-184985f10db7",
+    "reference": "NAI50BX001",
+    "name": "Nails (x50)",
+    "description": "Simple flat headed nails. Sold by box of 50.",
+    "price": "€5.99"
+  },
+  {
+    "id": "af4d7a2a-39cc-492c-baae-49ca9f0f160b",
+    "reference": "NAI100BX001",
+    "name": "Nails (x100)",
+    "description": "Simple flat headed nails. Sold by box of 100.",
+    "price": "€8.99"
+  },
+  {
+    "id": "a9d61b57-8bc7-4b10-a1dc-fab4e4af672d",
+    "reference": "SCRM350BX001",
+    "name": "M3 screws (x50)",
+    "description": "Simple cross-shaped M3 screws. Sold by box of 50.",
+    "price": "€5.00"
+  },
+  {
+    "id": "33523cbb-8893-4fd1-8766-9b79eda4c097",
+    "reference": "SCRM450BX001",
+    "name": "M4 screws (x50)",
+    "description": "Simple cross-shaped M4 screws. Sold by box of 50.",
+    "price": "€6.00"
+  },
+  {
+    "id": "cfb215ae-ed23-4047-a61c-454a6df7c3bb",
+    "reference": "SCRM550BX001",
+    "name": "M5 screws (x50)",
+    "description": "Simple cross-shaped M5 screws. Sold by box of 50.",
+    "price": "€7.00"
+  },
+  {
+    "id": "35d551b0-c290-47d8-a7ee-69fe7c82c192",
+    "reference": "SCRDRV001",
+    "name": "Screwdriver",
+    "description": "Simplest cross-shaped screwdriver ever made.",
+    "price": "€4.99"
+  },
+  {
+    "id": "24aa0a67-1692-4e07-9f9c-53e22e341e58",
+    "reference": "PLR001",
+    "name": "Pliers",
+    "description": "Simple yellow flat pliers.",
+    "price": "€12.00"
+  },
+  {
+    "id": "2fd6755b-cb01-4436-80cf-599fb07789bb",
+    "reference": "CSS001",
+    "name": "Cissors",
+    "description": "School cissors, with protective end caps.",
+    "price": "€5.00"
+  },
+  {
+    "id": "990a9352-9a71-4c61-a952-126330d7156a",
+    "reference": "GLUWD001",
+    "name": "Wood glue",
+    "description": "Specialized glue, made for wood.",
+    "price": "€4.50"
+  },
+  {
+    "id": "08eb67dd-d5eb-4bb9-8a20-851fb1d93538",
+    "reference": "GLUEP001",
+    "name": "Epoxy glue",
+    "description": "Hardest epoxy glue on the market.",
+    "price": "€5.80"
+  },
+  {
+    "id": "9507520a-7090-4e92-a7b4-a61c64a538e0",
+    "reference": "GLUST001",
+    "name": "Glue stick",
+    "description": "A school glue stick.",
+    "price": "€2.99"
+  },
+  {
+    "id": "dfc1b552-8d8d-4c0d-876c-51e6f33d7620",
+    "reference": "WATHS001",
+    "name": "Watering hose",
+    "description": "A simle, green watering hose.",
+    "price": "€18.50"
+  },
+  {
+    "id": "3ddfe849-420b-4320-b7af-bec3397f6b86",
+    "reference": "RODAL50001",
+    "name": "Aluminum rod (50 cm)",
+    "description": "Aluminum rod cut at 50cm length.",
+    "price": "€4.19"
+  },
+  {
+    "id": "de528c58-6a5c-4e44-a2e5-a8347d03c838",
+    "reference": "RODAL100001",
+    "name": "Aluminum rod (1m)",
+    "description": "Aluminum rod cut at 1m length.",
+    "price": "€7.59"
+  },
+  {
+    "id": "96626b17-16a3-49fa-93bc-7eada1ac0902",
+    "reference": "BRDWWD5050001",
+    "name": "Wooden board (50cmx50cm)",
+    "description": "Oak wooden board sold in 50cm x 50cm boards.",
+    "price": "€8.99"
+  },
+  {
+    "id": "6cc73ee4-1d03-4755-a70e-1dae6b0eb6ae",
+    "reference": "BRDWD100100001",
+    "name": "Wooden board (1mx1m)",
+    "description": "Oak wooden board sold in 1m x 1m boards.",
+    "price": "€15.99"
+  },
+  {
+    "id": "bb33cba2-072b-4a5a-9d77-647d91f4272f",
+    "reference": "BRDAL5050001",
+    "name": "Aluminum sheet (50cmx50cm)",
+    "description": "5050 Aluminum sheet sold by 50cm x 50cm sheets.",
+    "price": "€29.99"
+  }
+]

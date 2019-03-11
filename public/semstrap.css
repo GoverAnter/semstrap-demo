@@ -1,0 +1,5060 @@
+/* Prefix for children elements, like .strap.segments>.strap.segment */
+/* Breakpoint definitions */
+/* These are the same as semantic ui */
+/* Everything above large monitor is considered widescreen */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Roboto:400,400i,500,500i,700");
+@media (pointer: fine) {
+  [class*="mouse hidden"],
+[class*="touchscreen only"] {
+    display: none !important;
+  }
+}
+@media (pointer: coarse) {
+  [class*="touchscreen hidden"],
+[class*="mouse only"] {
+    display: none !important;
+  }
+}
+/* Semantic UI has these classes, however they're only applicable to*/
+/* grids, containers, rows and columns.*/
+/* plus, there isn't any `mobile hidden`, `X hidden` class.*/
+/* this snippet is using the same class names and same approach*/
+/* plus a bit more but to all elements.*/
+/* see https://github.com/Semantic-Org/Semantic-UI/issues/1114*/
+/* Original Gist : https://gist.github.com/bl4ck5un/ed27db3d653011b32ee0877058abac7d */
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  [class*="mobile hidden"],
+[class*="tablet only"]:not(.mobile),
+[class*="computer only"]:not(.mobile),
+[class*="large screen only"]:not(.mobile),
+[class*="widescreen only"]:not(.mobile),
+[class*="or lower hidden"] {
+    display: none !important;
+  }
+}
+/* Tablet / iPad Portrait */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  [class*="mobile only"]:not(.tablet),
+[class*="tablet hidden"],
+[class*="computer only"]:not(.tablet),
+[class*="large screen only"]:not(.tablet),
+[class*="widescreen only"]:not(.tablet),
+[class*="or lower hidden"]:not(.mobile) {
+    display: none !important;
+  }
+}
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  [class*="mobile only"]:not(.computer),
+[class*="tablet only"]:not(.computer),
+[class*="computer hidden"],
+[class*="large screen only"]:not(.computer),
+[class*="widescreen only"]:not(.computer),
+[class*="or lower hidden"]:not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+/* Large Monitor */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  [class*="mobile only"]:not([class*="large screen"]),
+[class*="tablet only"]:not([class*="large screen"]),
+[class*="computer only"]:not([class*="large screen"]),
+[class*="large screen hidden"],
+[class*="widescreen only"]:not([class*="large screen"]),
+[class*="or lower hidden"]:not(.computer):not(.tablet):not(.mobile) {
+    display: none !important;
+  }
+}
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+  [class*="mobile only"]:not([class*=widescreen]),
+[class*="tablet only"]:not([class*=widescreen]),
+[class*="computer only"]:not([class*=widescreen]),
+[class*="large screen only"]:not([class*=widescreen]),
+[class*="widescreen hidden"],
+[class*="widescreen or lower hidden"] {
+    display: none !important;
+  }
+}
+/* Positive, which means greenish 'ok' or 'validate' button */
+/* Negative, which means redish 'cancel' or 'delete' button */
+/* Warning, meaning an orangeish 'warning' or 'attention' message */
+/* This is what will trigger styling on element, think of it like 'ui' for semantinc, but here, we made it configurable !! */
+/* Either to use the project prefix as a class (like semantic), or use it as a real prefix (to prevent collision, with wordpress for example...) */
+/* Tells wether children components like a segment inside segments requires a prefix
+   If it requires a prefix, it will be either as a class or as a real prefix, determined by the above option */
+/* Google fonts to import, css will automagically download this fonts, no need to link it in your html
+   Should be in form 'Roboto:400,500'
+   Set to null to disable Google fonts entirely */
+/* This will determine which font will be used across everything except headers (see below) */
+/* This will determine which font headers will use (h* and sub components headers) */
+/* Base because radius will be adapted for specific elements (usually it will go a bit rounder) */
+/* Set the animation names here, and set the animation (using keyframes), then classes will be created with the animation name
+   To use it, use animation name like the default ones, eg. 'animation loading segment' */
+/* Main colors : white and text-black (default text color) */
+[class*="white text"], [class*="white icon"], [class*="white header"] {
+  color: white;
+}
+
+[class*="black text"], [class*="black icon"], [class*="black header"] {
+  color: #252627;
+}
+
+/* Opiniated colors */
+[class*="positive text"],
+[class*="positive icon"],
+[class*="positive header"] {
+  color: #28a745;
+}
+
+[class*="negative text"],
+[class*="negative icon"],
+[class*="negative header"] {
+  color: #db2828;
+}
+
+[class*="warning text"],
+[class*="warning icon"],
+[class*="warning header"] {
+  color: #fbbd08;
+}
+
+/* Base colors */
+[class*="orange text"],
+[class*="orange icon"],
+[class*="orange header"] {
+  color: #f89416;
+}
+
+[class*="light-orange text"],
+[class*="light-orange icon"],
+[class*="light-orange header"] {
+  color: #f9ab48;
+}
+
+[class*="lighter-orange text"],
+[class*="lighter-orange icon"],
+[class*="lighter-orange header"] {
+  color: #fbc179;
+}
+
+[class*="dark-orange text"],
+[class*="dark-orange icon"],
+[class*="dark-orange header"] {
+  color: #c87206;
+}
+
+[class*="darker-orange text"],
+[class*="darker-orange icon"],
+[class*="darker-orange header"] {
+  color: #8a4f04;
+}
+
+[class*="amber text"],
+[class*="amber icon"],
+[class*="amber header"] {
+  color: #ffc107;
+}
+
+[class*="light-amber text"],
+[class*="light-amber icon"],
+[class*="light-amber header"] {
+  color: #ffce3a;
+}
+
+[class*="lighter-amber text"],
+[class*="lighter-amber icon"],
+[class*="lighter-amber header"] {
+  color: #ffdb6d;
+}
+
+[class*="dark-amber text"],
+[class*="dark-amber icon"],
+[class*="dark-amber header"] {
+  color: #c69500;
+}
+
+[class*="darker-amber text"],
+[class*="darker-amber icon"],
+[class*="darker-amber header"] {
+  color: #876500;
+}
+
+[class*="yellow text"],
+[class*="yellow icon"],
+[class*="yellow header"] {
+  color: #ffeb3b;
+}
+
+[class*="light-yellow text"],
+[class*="light-yellow icon"],
+[class*="light-yellow header"] {
+  color: #fff06e;
+}
+
+[class*="lighter-yellow text"],
+[class*="lighter-yellow icon"],
+[class*="lighter-yellow header"] {
+  color: #fff5a1;
+}
+
+[class*="dark-yellow text"],
+[class*="dark-yellow icon"],
+[class*="dark-yellow header"] {
+  color: #fae100;
+}
+
+[class*="darker-yellow text"],
+[class*="darker-yellow icon"],
+[class*="darker-yellow header"] {
+  color: #bba700;
+}
+
+[class*="lime text"],
+[class*="lime icon"],
+[class*="lime header"] {
+  color: #cddc39;
+}
+
+[class*="light-lime text"],
+[class*="light-lime icon"],
+[class*="light-lime header"] {
+  color: #d8e464;
+}
+
+[class*="lighter-lime text"],
+[class*="lighter-lime icon"],
+[class*="lighter-lime header"] {
+  color: #e3eb90;
+}
+
+[class*="dark-lime text"],
+[class*="dark-lime icon"],
+[class*="dark-lime header"] {
+  color: #a7b520;
+}
+
+[class*="darker-lime text"],
+[class*="darker-lime icon"],
+[class*="darker-lime header"] {
+  color: #757f16;
+}
+
+[class*="green text"],
+[class*="green icon"],
+[class*="green header"] {
+  color: #8bc34a;
+}
+
+[class*="light-green text"],
+[class*="light-green icon"],
+[class*="light-green header"] {
+  color: #a4d070;
+}
+
+[class*="lighter-green text"],
+[class*="lighter-green icon"],
+[class*="lighter-green header"] {
+  color: #bcdc97;
+}
+
+[class*="dark-green text"],
+[class*="dark-green icon"],
+[class*="dark-green header"] {
+  color: #6a9a33;
+}
+
+[class*="darker-green text"],
+[class*="darker-green icon"],
+[class*="darker-green header"] {
+  color: #496a23;
+}
+
+[class*="teal text"],
+[class*="teal icon"],
+[class*="teal header"] {
+  color: #009688;
+}
+
+[class*="light-teal text"],
+[class*="light-teal icon"],
+[class*="light-teal header"] {
+  color: #00c9b6;
+}
+
+[class*="lighter-teal text"],
+[class*="lighter-teal icon"],
+[class*="lighter-teal header"] {
+  color: #00fce4;
+}
+
+[class*="dark-teal text"],
+[class*="dark-teal icon"],
+[class*="dark-teal header"] {
+  color: #00564e;
+}
+
+[class*="darker-teal text"],
+[class*="darker-teal icon"],
+[class*="darker-teal header"] {
+  color: #001714;
+}
+
+[class*="cyan text"],
+[class*="cyan icon"],
+[class*="cyan header"] {
+  color: #00bcd4;
+}
+
+[class*="light-cyan text"],
+[class*="light-cyan icon"],
+[class*="light-cyan header"] {
+  color: #08e3ff;
+}
+
+[class*="lighter-cyan text"],
+[class*="lighter-cyan icon"],
+[class*="lighter-cyan header"] {
+  color: #3be9ff;
+}
+
+[class*="dark-cyan text"],
+[class*="dark-cyan icon"],
+[class*="dark-cyan header"] {
+  color: #008394;
+}
+
+[class*="darker-cyan text"],
+[class*="darker-cyan icon"],
+[class*="darker-cyan header"] {
+  color: #004b55;
+}
+
+[class*="blue text"],
+[class*="blue icon"],
+[class*="blue header"] {
+  color: #2196f3;
+}
+
+[class*="light-blue text"],
+[class*="light-blue icon"],
+[class*="light-blue header"] {
+  color: #51adf6;
+}
+
+[class*="lighter-blue text"],
+[class*="lighter-blue icon"],
+[class*="lighter-blue header"] {
+  color: #82c4f8;
+}
+
+[class*="dark-blue text"],
+[class*="dark-blue icon"],
+[class*="dark-blue header"] {
+  color: #0b75c9;
+}
+
+[class*="darker-blue text"],
+[class*="darker-blue icon"],
+[class*="darker-blue header"] {
+  color: #08528d;
+}
+
+[class*="indigo text"],
+[class*="indigo icon"],
+[class*="indigo header"] {
+  color: #3f51b5;
+}
+
+[class*="light-indigo text"],
+[class*="light-indigo icon"],
+[class*="light-indigo header"] {
+  color: #606fc7;
+}
+
+[class*="lighter-indigo text"],
+[class*="lighter-indigo icon"],
+[class*="lighter-indigo header"] {
+  color: #8591d5;
+}
+
+[class*="dark-indigo text"],
+[class*="dark-indigo icon"],
+[class*="dark-indigo header"] {
+  color: #2f3c86;
+}
+
+[class*="darker-indigo text"],
+[class*="darker-indigo icon"],
+[class*="darker-indigo header"] {
+  color: #1e2756;
+}
+
+[class*="purple text"],
+[class*="purple icon"],
+[class*="purple header"] {
+  color: #9b59b6;
+}
+
+[class*="light-purple text"],
+[class*="light-purple icon"],
+[class*="light-purple header"] {
+  color: #b07cc6;
+}
+
+[class*="lighter-purple text"],
+[class*="lighter-purple icon"],
+[class*="lighter-purple header"] {
+  color: #c6a0d5;
+}
+
+[class*="dark-purple text"],
+[class*="dark-purple icon"],
+[class*="dark-purple header"] {
+  color: #793f90;
+}
+
+[class*="darker-purple text"],
+[class*="darker-purple icon"],
+[class*="darker-purple header"] {
+  color: #532c64;
+}
+
+[class*="pink text"],
+[class*="pink icon"],
+[class*="pink header"] {
+  color: #e91e63;
+}
+
+[class*="light-pink text"],
+[class*="light-pink icon"],
+[class*="light-pink header"] {
+  color: #ee4c83;
+}
+
+[class*="lighter-pink text"],
+[class*="lighter-pink icon"],
+[class*="lighter-pink header"] {
+  color: #f27ba3;
+}
+
+[class*="dark-pink text"],
+[class*="dark-pink icon"],
+[class*="dark-pink header"] {
+  color: #b61249;
+}
+
+[class*="darker-pink text"],
+[class*="darker-pink icon"],
+[class*="darker-pink header"] {
+  color: #7b0c32;
+}
+
+[class*="red text"],
+[class*="red icon"],
+[class*="red header"] {
+  color: #f44336;
+}
+
+[class*="light-red text"],
+[class*="light-red icon"],
+[class*="light-red header"] {
+  color: #f77066;
+}
+
+[class*="lighter-red text"],
+[class*="lighter-red icon"],
+[class*="lighter-red header"] {
+  color: #f99d97;
+}
+
+[class*="dark-red text"],
+[class*="dark-red icon"],
+[class*="dark-red header"] {
+  color: #de1b0c;
+}
+
+[class*="darker-red text"],
+[class*="darker-red icon"],
+[class*="darker-red header"] {
+  color: #a21309;
+}
+
+[class*="brown text"],
+[class*="brown icon"],
+[class*="brown header"] {
+  color: #a5673f;
+}
+
+[class*="light-brown text"],
+[class*="light-brown icon"],
+[class*="light-brown header"] {
+  color: #bf8058;
+}
+
+[class*="lighter-brown text"],
+[class*="lighter-brown icon"],
+[class*="lighter-brown header"] {
+  color: #cd9c7d;
+}
+
+[class*="dark-brown text"],
+[class*="dark-brown icon"],
+[class*="dark-brown header"] {
+  color: #774a2d;
+}
+
+[class*="darker-brown text"],
+[class*="darker-brown icon"],
+[class*="darker-brown header"] {
+  color: #492d1c;
+}
+
+[class*="grey text"],
+[class*="grey icon"],
+[class*="grey header"] {
+  color: #9e9e9e;
+}
+
+[class*="light-grey text"],
+[class*="light-grey icon"],
+[class*="light-grey header"] {
+  color: #b8b8b8;
+}
+
+[class*="lighter-grey text"],
+[class*="lighter-grey icon"],
+[class*="lighter-grey header"] {
+  color: #d1d1d1;
+}
+
+[class*="dark-grey text"],
+[class*="dark-grey icon"],
+[class*="dark-grey header"] {
+  color: #7e7e7e;
+}
+
+[class*="darker-grey text"],
+[class*="darker-grey icon"],
+[class*="darker-grey header"] {
+  color: #5e5e5e;
+}
+
+[class*="blue-grey text"],
+[class*="blue-grey icon"],
+[class*="blue-grey header"] {
+  color: #36404a;
+}
+
+[class*="light-blue-grey text"],
+[class*="light-blue-grey icon"],
+[class*="light-blue-grey header"] {
+  color: #4c5a67;
+}
+
+[class*="lighter-blue-grey text"],
+[class*="lighter-blue-grey icon"],
+[class*="lighter-blue-grey header"] {
+  color: #617385;
+}
+
+[class*="dark-blue-grey text"],
+[class*="dark-blue-grey icon"],
+[class*="dark-blue-grey header"] {
+  color: #1b2025;
+}
+
+[class*="darker-blue-grey text"],
+[class*="darker-blue-grey icon"],
+[class*="darker-blue-grey header"] {
+  color: black;
+}
+
+/* Background colors */
+[class*="orange background"] {
+  background-color: #f89416;
+}
+
+[class*="light-orange background"] {
+  background-color: #f9ab48;
+}
+
+[class*="lighter-orange background"] {
+  background-color: #fbc179;
+}
+
+[class*="dark-orange background"] {
+  background-color: #c87206;
+}
+
+[class*="darker-orange background"] {
+  background-color: #8a4f04;
+}
+
+[class*="amber background"] {
+  background-color: #ffc107;
+}
+
+[class*="light-amber background"] {
+  background-color: #ffce3a;
+}
+
+[class*="lighter-amber background"] {
+  background-color: #ffdb6d;
+}
+
+[class*="dark-amber background"] {
+  background-color: #c69500;
+}
+
+[class*="darker-amber background"] {
+  background-color: #876500;
+}
+
+[class*="yellow background"] {
+  background-color: #ffeb3b;
+}
+
+[class*="light-yellow background"] {
+  background-color: #fff06e;
+}
+
+[class*="lighter-yellow background"] {
+  background-color: #fff5a1;
+}
+
+[class*="dark-yellow background"] {
+  background-color: #fae100;
+}
+
+[class*="darker-yellow background"] {
+  background-color: #bba700;
+}
+
+[class*="lime background"] {
+  background-color: #cddc39;
+}
+
+[class*="light-lime background"] {
+  background-color: #d8e464;
+}
+
+[class*="lighter-lime background"] {
+  background-color: #e3eb90;
+}
+
+[class*="dark-lime background"] {
+  background-color: #a7b520;
+}
+
+[class*="darker-lime background"] {
+  background-color: #757f16;
+}
+
+[class*="green background"] {
+  background-color: #8bc34a;
+}
+
+[class*="light-green background"] {
+  background-color: #a4d070;
+}
+
+[class*="lighter-green background"] {
+  background-color: #bcdc97;
+}
+
+[class*="dark-green background"] {
+  background-color: #6a9a33;
+}
+
+[class*="darker-green background"] {
+  background-color: #496a23;
+}
+
+[class*="teal background"] {
+  background-color: #009688;
+}
+
+[class*="light-teal background"] {
+  background-color: #00c9b6;
+}
+
+[class*="lighter-teal background"] {
+  background-color: #00fce4;
+}
+
+[class*="dark-teal background"] {
+  background-color: #00564e;
+}
+
+[class*="darker-teal background"] {
+  background-color: #001714;
+}
+
+[class*="cyan background"] {
+  background-color: #00bcd4;
+}
+
+[class*="light-cyan background"] {
+  background-color: #08e3ff;
+}
+
+[class*="lighter-cyan background"] {
+  background-color: #3be9ff;
+}
+
+[class*="dark-cyan background"] {
+  background-color: #008394;
+}
+
+[class*="darker-cyan background"] {
+  background-color: #004b55;
+}
+
+[class*="blue background"] {
+  background-color: #2196f3;
+}
+
+[class*="light-blue background"] {
+  background-color: #51adf6;
+}
+
+[class*="lighter-blue background"] {
+  background-color: #82c4f8;
+}
+
+[class*="dark-blue background"] {
+  background-color: #0b75c9;
+}
+
+[class*="darker-blue background"] {
+  background-color: #08528d;
+}
+
+[class*="indigo background"] {
+  background-color: #3f51b5;
+}
+
+[class*="light-indigo background"] {
+  background-color: #606fc7;
+}
+
+[class*="lighter-indigo background"] {
+  background-color: #8591d5;
+}
+
+[class*="dark-indigo background"] {
+  background-color: #2f3c86;
+}
+
+[class*="darker-indigo background"] {
+  background-color: #1e2756;
+}
+
+[class*="purple background"] {
+  background-color: #9b59b6;
+}
+
+[class*="light-purple background"] {
+  background-color: #b07cc6;
+}
+
+[class*="lighter-purple background"] {
+  background-color: #c6a0d5;
+}
+
+[class*="dark-purple background"] {
+  background-color: #793f90;
+}
+
+[class*="darker-purple background"] {
+  background-color: #532c64;
+}
+
+[class*="pink background"] {
+  background-color: #e91e63;
+}
+
+[class*="light-pink background"] {
+  background-color: #ee4c83;
+}
+
+[class*="lighter-pink background"] {
+  background-color: #f27ba3;
+}
+
+[class*="dark-pink background"] {
+  background-color: #b61249;
+}
+
+[class*="darker-pink background"] {
+  background-color: #7b0c32;
+}
+
+[class*="red background"] {
+  background-color: #f44336;
+}
+
+[class*="light-red background"] {
+  background-color: #f77066;
+}
+
+[class*="lighter-red background"] {
+  background-color: #f99d97;
+}
+
+[class*="dark-red background"] {
+  background-color: #de1b0c;
+}
+
+[class*="darker-red background"] {
+  background-color: #a21309;
+}
+
+[class*="brown background"] {
+  background-color: #a5673f;
+}
+
+[class*="light-brown background"] {
+  background-color: #bf8058;
+}
+
+[class*="lighter-brown background"] {
+  background-color: #cd9c7d;
+}
+
+[class*="dark-brown background"] {
+  background-color: #774a2d;
+}
+
+[class*="darker-brown background"] {
+  background-color: #492d1c;
+}
+
+[class*="grey background"] {
+  background-color: #9e9e9e;
+}
+
+[class*="light-grey background"] {
+  background-color: #b8b8b8;
+}
+
+[class*="lighter-grey background"] {
+  background-color: #d1d1d1;
+}
+
+[class*="dark-grey background"] {
+  background-color: #7e7e7e;
+}
+
+[class*="darker-grey background"] {
+  background-color: #5e5e5e;
+}
+
+[class*="blue-grey background"] {
+  background-color: #36404a;
+}
+
+[class*="light-blue-grey background"] {
+  background-color: #4c5a67;
+}
+
+[class*="lighter-blue-grey background"] {
+  background-color: #617385;
+}
+
+[class*="dark-blue-grey background"] {
+  background-color: #1b2025;
+}
+
+[class*="darker-blue-grey background"] {
+  background-color: black;
+}
+
+/* Alert and progress colors */
+.strap.alert[class*="orange alert"] {
+  background-color: rgba(250, 182, 96, 0.25);
+  border-color: rgba(188, 107, 6, 0.5);
+  color: #bc6b06;
+}
+
+.strap.progress[class*="orange progress"] > .bar {
+  background-color: #f89416;
+}
+
+.strap.alert[class*="amber alert"] {
+  background-color: rgba(255, 212, 84, 0.25);
+  border-color: rgba(186, 139, 0, 0.5);
+  color: #ba8b00;
+}
+
+.strap.progress[class*="amber progress"] > .bar {
+  background-color: #ffc107;
+}
+
+.strap.alert[class*="yellow alert"] {
+  background-color: rgba(255, 243, 136, 0.25);
+  border-color: rgba(238, 213, 0, 0.5);
+  color: #eed500;
+}
+
+.strap.progress[class*="yellow progress"] > .bar {
+  background-color: #ffeb3b;
+}
+
+.strap.alert[class*="lime alert"] {
+  background-color: rgba(221, 231, 122, 0.25);
+  border-color: rgba(157, 170, 30, 0.5);
+  color: #9daa1e;
+}
+
+.strap.progress[class*="lime progress"] > .bar {
+  background-color: #cddc39;
+}
+
+.strap.alert[class*="green alert"] {
+  background-color: rgba(176, 214, 131, 0.25);
+  border-color: rgba(100, 145, 48, 0.5);
+  color: #649130;
+}
+
+.strap.progress[class*="green progress"] > .bar {
+  background-color: #8bc34a;
+}
+
+.strap.alert[class*="teal alert"] {
+  background-color: rgba(0, 227, 205, 0.25);
+  border-color: rgba(0, 74, 67, 0.5);
+  color: #004a43;
+}
+
+.strap.progress[class*="teal progress"] > .bar {
+  background-color: #009688;
+}
+
+.strap.alert[class*="cyan alert"] {
+  background-color: rgba(34, 230, 255, 0.25);
+  border-color: rgba(0, 120, 136, 0.5);
+  color: #007888;
+}
+
+.strap.progress[class*="cyan progress"] > .bar {
+  background-color: #00bcd4;
+}
+
+.strap.alert[class*="blue alert"] {
+  background-color: rgba(106, 184, 247, 0.25);
+  border-color: rgba(10, 110, 189, 0.5);
+  color: #0a6ebd;
+}
+
+.strap.progress[class*="blue progress"] > .bar {
+  background-color: #2196f3;
+}
+
+.strap.alert[class*="indigo alert"] {
+  background-color: rgba(114, 128, 206, 0.25);
+  border-color: rgba(43, 56, 124, 0.5);
+  color: #2b387c;
+}
+
+.strap.progress[class*="indigo progress"] > .bar {
+  background-color: #3f51b5;
+}
+
+.strap.alert[class*="purple alert"] {
+  background-color: rgba(187, 142, 205, 0.25);
+  border-color: rgba(113, 59, 135, 0.5);
+  color: #713b87;
+}
+
+.strap.progress[class*="purple progress"] > .bar {
+  background-color: #9b59b6;
+}
+
+.strap.alert[class*="pink alert"] {
+  background-color: rgba(240, 100, 147, 0.25);
+  border-color: rgba(170, 17, 69, 0.5);
+  color: #aa1145;
+}
+
+.strap.progress[class*="pink progress"] > .bar {
+  background-color: #e91e63;
+}
+
+.strap.alert[class*="red alert"] {
+  background-color: rgba(248, 135, 127, 0.25);
+  border-color: rgba(210, 25, 11, 0.5);
+  color: #d2190b;
+}
+
+.strap.progress[class*="red progress"] > .bar {
+  background-color: #f44336;
+}
+
+.strap.alert[class*="brown alert"] {
+  background-color: rgba(198, 142, 106, 0.25);
+  border-color: rgba(110, 68, 42, 0.5);
+  color: #6e442a;
+}
+
+.strap.progress[class*="brown progress"] > .bar {
+  background-color: #a5673f;
+}
+
+.strap.alert[class*="grey alert"] {
+  background-color: rgba(196, 196, 196, 0.25);
+  border-color: rgba(120, 120, 120, 0.5);
+  color: #787878;
+}
+
+.strap.progress[class*="grey progress"] > .bar {
+  background-color: #9e9e9e;
+}
+
+.strap.alert[class*="blue-grey alert"] {
+  background-color: rgba(86, 102, 118, 0.25);
+  border-color: rgba(22, 26, 30, 0.5);
+  color: #161a1e;
+}
+
+.strap.progress[class*="blue-grey progress"] > .bar {
+  background-color: #36404a;
+}
+
+/* Button colors */
+.strap.button[class*="orange button"] {
+  border-color: #fbc179;
+  color: #f89416;
+}
+.strap.button[class*="orange button"]:not(.outline) {
+  background-color: rgba(249, 171, 72, 0.3);
+}
+.strap.button[class*="orange button"].toggled {
+  box-shadow: 0 0 10px 2px #8a4f04 inset;
+}
+.strap.button[class*="orange button"]:not(.disabled):hover, .strap.button[class*="orange button"]:not(.disabled):focus, .strap.button[class*="orange button"]:not(.disabled).selected {
+  color: #e78407;
+}
+.strap.button[class*="orange button"]:not(.disabled):hover:not(.outline), .strap.button[class*="orange button"]:not(.disabled):focus:not(.outline), .strap.button[class*="orange button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(249, 171, 72, 0.4);
+}
+.strap.button[class*="orange button"]:not(.disabled):active, .strap.button[class*="orange button"]:not(.disabled).active {
+  color: #c87206;
+}
+.strap.button[class*="orange button"]:not(.disabled):active:not(.outline), .strap.button[class*="orange button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(249, 171, 72, 0.5);
+}
+.strap.button[class*="orange button"].flat {
+  color: #f89416;
+}
+.strap.button[class*="orange button"].flat:not(.disabled):not(.outline), .strap.button[class*="orange button"].flat:not(.disabled):hover, .strap.button[class*="orange button"].flat:not(.disabled):focus, .strap.button[class*="orange button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #f89416;
+}
+.strap.button[class*="orange button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="orange button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="orange button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="orange button"].flat:not(.disabled):active, .strap.button[class*="orange button"].flat:not(.disabled).active {
+  background-color: #e78407;
+}
+.strap.button[class*="orange button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="orange button"].flat:not(.disabled):not(.outline):active {
+  background-color: #c87206;
+}
+
+.strap.button[class*="amber button"] {
+  border-color: #ffcb2d;
+  color: #c69500;
+}
+.strap.button[class*="amber button"]:not(.outline) {
+  background-color: rgba(249, 187, 0, 0.3);
+}
+.strap.button[class*="amber button"].toggled {
+  box-shadow: 0 0 10px 2px #473500 inset;
+}
+.strap.button[class*="amber button"]:not(.disabled):hover, .strap.button[class*="amber button"]:not(.disabled):focus, .strap.button[class*="amber button"]:not(.disabled).selected {
+  color: #a67d00;
+}
+.strap.button[class*="amber button"]:not(.disabled):hover:not(.outline), .strap.button[class*="amber button"]:not(.disabled):focus:not(.outline), .strap.button[class*="amber button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(249, 187, 0, 0.4);
+}
+.strap.button[class*="amber button"]:not(.disabled):active, .strap.button[class*="amber button"]:not(.disabled).active {
+  color: #876500;
+}
+.strap.button[class*="amber button"]:not(.disabled):active:not(.outline), .strap.button[class*="amber button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(249, 187, 0, 0.5);
+}
+.strap.button[class*="amber button"].flat {
+  color: #ffc107;
+}
+.strap.button[class*="amber button"].flat:not(.disabled):not(.outline), .strap.button[class*="amber button"].flat:not(.disabled):hover, .strap.button[class*="amber button"].flat:not(.disabled):focus, .strap.button[class*="amber button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #ffc107;
+}
+.strap.button[class*="amber button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="amber button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="amber button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="amber button"].flat:not(.disabled):active, .strap.button[class*="amber button"].flat:not(.disabled).active {
+  background-color: #e6ad00;
+}
+.strap.button[class*="amber button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="amber button"].flat:not(.disabled):not(.outline):active {
+  background-color: #c69500;
+}
+
+.strap.button[class*="yellow button"] {
+  border-color: #ffef61;
+  color: #fae100;
+}
+.strap.button[class*="yellow button"]:not(.outline) {
+  background-color: rgba(255, 234, 46, 0.3);
+}
+.strap.button[class*="yellow button"].toggled {
+  box-shadow: 0 0 10px 2px #7b6e00 inset;
+}
+.strap.button[class*="yellow button"]:not(.disabled):hover, .strap.button[class*="yellow button"]:not(.disabled):focus, .strap.button[class*="yellow button"]:not(.disabled).selected {
+  color: #dac400;
+}
+.strap.button[class*="yellow button"]:not(.disabled):hover:not(.outline), .strap.button[class*="yellow button"]:not(.disabled):focus:not(.outline), .strap.button[class*="yellow button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(255, 234, 46, 0.4);
+}
+.strap.button[class*="yellow button"]:not(.disabled):active, .strap.button[class*="yellow button"]:not(.disabled).active {
+  color: #bba700;
+}
+.strap.button[class*="yellow button"]:not(.disabled):active:not(.outline), .strap.button[class*="yellow button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(255, 234, 46, 0.5);
+}
+.strap.button[class*="yellow button"].flat {
+  color: #fae100;
+}
+.strap.button[class*="yellow button"].flat:not(.disabled):not(.outline), .strap.button[class*="yellow button"].flat:not(.disabled):hover, .strap.button[class*="yellow button"].flat:not(.disabled):focus, .strap.button[class*="yellow button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #fae100;
+}
+.strap.button[class*="yellow button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="yellow button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="yellow button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="yellow button"].flat:not(.disabled):active, .strap.button[class*="yellow button"].flat:not(.disabled).active {
+  background-color: #dac400;
+}
+.strap.button[class*="yellow button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="yellow button"].flat:not(.disabled):not(.outline):active {
+  background-color: #bba700;
+}
+
+.strap.button[class*="lime button"] {
+  border-color: #d5e25a;
+  color: #a7b520;
+}
+.strap.button[class*="lime button"]:not(.outline) {
+  background-color: rgba(202, 218, 46, 0.3);
+}
+.strap.button[class*="lime button"].toggled {
+  box-shadow: 0 0 10px 2px #43490d inset;
+}
+.strap.button[class*="lime button"]:not(.disabled):hover, .strap.button[class*="lime button"]:not(.disabled):focus, .strap.button[class*="lime button"]:not(.disabled).selected {
+  color: #8e9a1b;
+}
+.strap.button[class*="lime button"]:not(.disabled):hover:not(.outline), .strap.button[class*="lime button"]:not(.disabled):focus:not(.outline), .strap.button[class*="lime button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(202, 218, 46, 0.4);
+}
+.strap.button[class*="lime button"]:not(.disabled):active, .strap.button[class*="lime button"]:not(.disabled).active {
+  color: #757f16;
+}
+.strap.button[class*="lime button"]:not(.disabled):active:not(.outline), .strap.button[class*="lime button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(202, 218, 46, 0.5);
+}
+.strap.button[class*="lime button"].flat {
+  color: #cddc39;
+}
+.strap.button[class*="lime button"].flat:not(.disabled):not(.outline), .strap.button[class*="lime button"].flat:not(.disabled):hover, .strap.button[class*="lime button"].flat:not(.disabled):focus, .strap.button[class*="lime button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #cddc39;
+}
+.strap.button[class*="lime button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="lime button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="lime button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="lime button"].flat:not(.disabled):active, .strap.button[class*="lime button"].flat:not(.disabled).active {
+  background-color: #c1d025;
+}
+.strap.button[class*="lime button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="lime button"].flat:not(.disabled):not(.outline):active {
+  background-color: #a7b520;
+}
+
+.strap.button[class*="green button"] {
+  border-color: #bcdc97;
+  color: #8bc34a;
+}
+.strap.button[class*="green button"]:not(.outline) {
+  background-color: rgba(164, 208, 112, 0.3);
+}
+.strap.button[class*="green button"].toggled {
+  box-shadow: 0 0 10px 2px #496a23 inset;
+}
+.strap.button[class*="green button"]:not(.disabled):hover, .strap.button[class*="green button"]:not(.disabled):focus, .strap.button[class*="green button"]:not(.disabled).selected {
+  color: #7bb23b;
+}
+.strap.button[class*="green button"]:not(.disabled):hover:not(.outline), .strap.button[class*="green button"]:not(.disabled):focus:not(.outline), .strap.button[class*="green button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(164, 208, 112, 0.4);
+}
+.strap.button[class*="green button"]:not(.disabled):active, .strap.button[class*="green button"]:not(.disabled).active {
+  color: #6a9a33;
+}
+.strap.button[class*="green button"]:not(.disabled):active:not(.outline), .strap.button[class*="green button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(164, 208, 112, 0.5);
+}
+.strap.button[class*="green button"].flat {
+  color: #8bc34a;
+}
+.strap.button[class*="green button"].flat:not(.disabled):not(.outline), .strap.button[class*="green button"].flat:not(.disabled):hover, .strap.button[class*="green button"].flat:not(.disabled):focus, .strap.button[class*="green button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #8bc34a;
+}
+.strap.button[class*="green button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="green button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="green button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="green button"].flat:not(.disabled):active, .strap.button[class*="green button"].flat:not(.disabled).active {
+  background-color: #7bb23b;
+}
+.strap.button[class*="green button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="green button"].flat:not(.disabled):not(.outline):active {
+  background-color: #6a9a33;
+}
+
+.strap.button[class*="teal button"] {
+  border-color: #00fce4;
+  color: #009688;
+}
+.strap.button[class*="teal button"]:not(.outline) {
+  background-color: rgba(0, 201, 182, 0.3);
+}
+.strap.button[class*="teal button"].toggled {
+  box-shadow: 0 0 10px 2px #001714 inset;
+}
+.strap.button[class*="teal button"]:not(.disabled):hover, .strap.button[class*="teal button"]:not(.disabled):focus, .strap.button[class*="teal button"]:not(.disabled).selected {
+  color: #00766b;
+}
+.strap.button[class*="teal button"]:not(.disabled):hover:not(.outline), .strap.button[class*="teal button"]:not(.disabled):focus:not(.outline), .strap.button[class*="teal button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(0, 201, 182, 0.4);
+}
+.strap.button[class*="teal button"]:not(.disabled):active, .strap.button[class*="teal button"]:not(.disabled).active {
+  color: #00564e;
+}
+.strap.button[class*="teal button"]:not(.disabled):active:not(.outline), .strap.button[class*="teal button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(0, 201, 182, 0.5);
+}
+.strap.button[class*="teal button"].flat {
+  color: #009688;
+}
+.strap.button[class*="teal button"].flat:not(.disabled):not(.outline), .strap.button[class*="teal button"].flat:not(.disabled):hover, .strap.button[class*="teal button"].flat:not(.disabled):focus, .strap.button[class*="teal button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #009688;
+}
+.strap.button[class*="teal button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="teal button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="teal button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="teal button"].flat:not(.disabled):active, .strap.button[class*="teal button"].flat:not(.disabled).active {
+  background-color: #00766b;
+}
+.strap.button[class*="teal button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="teal button"].flat:not(.disabled):not(.outline):active {
+  background-color: #00564e;
+}
+
+.strap.button[class*="cyan button"] {
+  border-color: #3be9ff;
+  color: #00bcd4;
+}
+.strap.button[class*="cyan button"]:not(.outline) {
+  background-color: rgba(8, 227, 255, 0.3);
+}
+.strap.button[class*="cyan button"].toggled {
+  box-shadow: 0 0 10px 2px #004b55 inset;
+}
+.strap.button[class*="cyan button"]:not(.disabled):hover, .strap.button[class*="cyan button"]:not(.disabled):focus, .strap.button[class*="cyan button"]:not(.disabled).selected {
+  color: #00a0b4;
+}
+.strap.button[class*="cyan button"]:not(.disabled):hover:not(.outline), .strap.button[class*="cyan button"]:not(.disabled):focus:not(.outline), .strap.button[class*="cyan button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(8, 227, 255, 0.4);
+}
+.strap.button[class*="cyan button"]:not(.disabled):active, .strap.button[class*="cyan button"]:not(.disabled).active {
+  color: #008394;
+}
+.strap.button[class*="cyan button"]:not(.disabled):active:not(.outline), .strap.button[class*="cyan button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(8, 227, 255, 0.5);
+}
+.strap.button[class*="cyan button"].flat {
+  color: #00bcd4;
+}
+.strap.button[class*="cyan button"].flat:not(.disabled):not(.outline), .strap.button[class*="cyan button"].flat:not(.disabled):hover, .strap.button[class*="cyan button"].flat:not(.disabled):focus, .strap.button[class*="cyan button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #00bcd4;
+}
+.strap.button[class*="cyan button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="cyan button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="cyan button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="cyan button"].flat:not(.disabled):active, .strap.button[class*="cyan button"].flat:not(.disabled).active {
+  background-color: #00a0b4;
+}
+.strap.button[class*="cyan button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="cyan button"].flat:not(.disabled):not(.outline):active {
+  background-color: #008394;
+}
+
+.strap.button[class*="blue button"] {
+  border-color: #82c4f8;
+  color: #2196f3;
+}
+.strap.button[class*="blue button"]:not(.outline) {
+  background-color: rgba(81, 173, 246, 0.3);
+}
+.strap.button[class*="blue button"].toggled {
+  box-shadow: 0 0 10px 2px #08528d inset;
+}
+.strap.button[class*="blue button"]:not(.disabled):hover, .strap.button[class*="blue button"]:not(.disabled):focus, .strap.button[class*="blue button"]:not(.disabled).selected {
+  color: #0d87e8;
+}
+.strap.button[class*="blue button"]:not(.disabled):hover:not(.outline), .strap.button[class*="blue button"]:not(.disabled):focus:not(.outline), .strap.button[class*="blue button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(81, 173, 246, 0.4);
+}
+.strap.button[class*="blue button"]:not(.disabled):active, .strap.button[class*="blue button"]:not(.disabled).active {
+  color: #0b75c9;
+}
+.strap.button[class*="blue button"]:not(.disabled):active:not(.outline), .strap.button[class*="blue button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(81, 173, 246, 0.5);
+}
+.strap.button[class*="blue button"].flat {
+  color: #2196f3;
+}
+.strap.button[class*="blue button"].flat:not(.disabled):not(.outline), .strap.button[class*="blue button"].flat:not(.disabled):hover, .strap.button[class*="blue button"].flat:not(.disabled):focus, .strap.button[class*="blue button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #2196f3;
+}
+.strap.button[class*="blue button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="blue button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="blue button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="blue button"].flat:not(.disabled):active, .strap.button[class*="blue button"].flat:not(.disabled).active {
+  background-color: #0d87e8;
+}
+.strap.button[class*="blue button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="blue button"].flat:not(.disabled):not(.outline):active {
+  background-color: #0b75c9;
+}
+
+.strap.button[class*="indigo button"] {
+  border-color: #8591d5;
+  color: #3f51b5;
+}
+.strap.button[class*="indigo button"]:not(.outline) {
+  background-color: rgba(96, 111, 199, 0.3);
+}
+.strap.button[class*="indigo button"].toggled {
+  box-shadow: 0 0 10px 2px #1e2756 inset;
+}
+.strap.button[class*="indigo button"]:not(.disabled):hover, .strap.button[class*="indigo button"]:not(.disabled):focus, .strap.button[class*="indigo button"]:not(.disabled).selected {
+  color: #37469d;
+}
+.strap.button[class*="indigo button"]:not(.disabled):hover:not(.outline), .strap.button[class*="indigo button"]:not(.disabled):focus:not(.outline), .strap.button[class*="indigo button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(96, 111, 199, 0.4);
+}
+.strap.button[class*="indigo button"]:not(.disabled):active, .strap.button[class*="indigo button"]:not(.disabled).active {
+  color: #2f3c86;
+}
+.strap.button[class*="indigo button"]:not(.disabled):active:not(.outline), .strap.button[class*="indigo button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(96, 111, 199, 0.5);
+}
+.strap.button[class*="indigo button"].flat {
+  color: #3f51b5;
+}
+.strap.button[class*="indigo button"].flat:not(.disabled):not(.outline), .strap.button[class*="indigo button"].flat:not(.disabled):hover, .strap.button[class*="indigo button"].flat:not(.disabled):focus, .strap.button[class*="indigo button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #3f51b5;
+}
+.strap.button[class*="indigo button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="indigo button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="indigo button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="indigo button"].flat:not(.disabled):active, .strap.button[class*="indigo button"].flat:not(.disabled).active {
+  background-color: #37469d;
+}
+.strap.button[class*="indigo button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="indigo button"].flat:not(.disabled):not(.outline):active {
+  background-color: #2f3c86;
+}
+
+.strap.button[class*="purple button"] {
+  border-color: #c6a0d5;
+  color: #9b59b6;
+}
+.strap.button[class*="purple button"]:not(.outline) {
+  background-color: rgba(176, 124, 198, 0.3);
+}
+.strap.button[class*="purple button"].toggled {
+  box-shadow: 0 0 10px 2px #532c64 inset;
+}
+.strap.button[class*="purple button"]:not(.disabled):hover, .strap.button[class*="purple button"]:not(.disabled):focus, .strap.button[class*="purple button"]:not(.disabled).selected {
+  color: #8b49a6;
+}
+.strap.button[class*="purple button"]:not(.disabled):hover:not(.outline), .strap.button[class*="purple button"]:not(.disabled):focus:not(.outline), .strap.button[class*="purple button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(176, 124, 198, 0.4);
+}
+.strap.button[class*="purple button"]:not(.disabled):active, .strap.button[class*="purple button"]:not(.disabled).active {
+  color: #793f90;
+}
+.strap.button[class*="purple button"]:not(.disabled):active:not(.outline), .strap.button[class*="purple button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(176, 124, 198, 0.5);
+}
+.strap.button[class*="purple button"].flat {
+  color: #9b59b6;
+}
+.strap.button[class*="purple button"].flat:not(.disabled):not(.outline), .strap.button[class*="purple button"].flat:not(.disabled):hover, .strap.button[class*="purple button"].flat:not(.disabled):focus, .strap.button[class*="purple button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #9b59b6;
+}
+.strap.button[class*="purple button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="purple button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="purple button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="purple button"].flat:not(.disabled):active, .strap.button[class*="purple button"].flat:not(.disabled).active {
+  background-color: #8b49a6;
+}
+.strap.button[class*="purple button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="purple button"].flat:not(.disabled):not(.outline):active {
+  background-color: #793f90;
+}
+
+.strap.button[class*="pink button"] {
+  border-color: #f27ba3;
+  color: #e91e63;
+}
+.strap.button[class*="pink button"]:not(.outline) {
+  background-color: rgba(238, 76, 131, 0.3);
+}
+.strap.button[class*="pink button"].toggled {
+  box-shadow: 0 0 10px 2px #7b0c32 inset;
+}
+.strap.button[class*="pink button"]:not(.disabled):hover, .strap.button[class*="pink button"]:not(.disabled):focus, .strap.button[class*="pink button"]:not(.disabled).selected {
+  color: #d31555;
+}
+.strap.button[class*="pink button"]:not(.disabled):hover:not(.outline), .strap.button[class*="pink button"]:not(.disabled):focus:not(.outline), .strap.button[class*="pink button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(238, 76, 131, 0.4);
+}
+.strap.button[class*="pink button"]:not(.disabled):active, .strap.button[class*="pink button"]:not(.disabled).active {
+  color: #b61249;
+}
+.strap.button[class*="pink button"]:not(.disabled):active:not(.outline), .strap.button[class*="pink button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(238, 76, 131, 0.5);
+}
+.strap.button[class*="pink button"].flat {
+  color: #e91e63;
+}
+.strap.button[class*="pink button"].flat:not(.disabled):not(.outline), .strap.button[class*="pink button"].flat:not(.disabled):hover, .strap.button[class*="pink button"].flat:not(.disabled):focus, .strap.button[class*="pink button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #e91e63;
+}
+.strap.button[class*="pink button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="pink button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="pink button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="pink button"].flat:not(.disabled):active, .strap.button[class*="pink button"].flat:not(.disabled).active {
+  background-color: #d31555;
+}
+.strap.button[class*="pink button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="pink button"].flat:not(.disabled):not(.outline):active {
+  background-color: #b61249;
+}
+
+.strap.button[class*="red button"] {
+  border-color: #f99d97;
+  color: #f44336;
+}
+.strap.button[class*="red button"]:not(.outline) {
+  background-color: rgba(247, 112, 102, 0.3);
+}
+.strap.button[class*="red button"].toggled {
+  box-shadow: 0 0 10px 2px #a21309 inset;
+}
+.strap.button[class*="red button"]:not(.disabled):hover, .strap.button[class*="red button"]:not(.disabled):focus, .strap.button[class*="red button"]:not(.disabled).selected {
+  color: #f22718;
+}
+.strap.button[class*="red button"]:not(.disabled):hover:not(.outline), .strap.button[class*="red button"]:not(.disabled):focus:not(.outline), .strap.button[class*="red button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(247, 112, 102, 0.4);
+}
+.strap.button[class*="red button"]:not(.disabled):active, .strap.button[class*="red button"]:not(.disabled).active {
+  color: #de1b0c;
+}
+.strap.button[class*="red button"]:not(.disabled):active:not(.outline), .strap.button[class*="red button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(247, 112, 102, 0.5);
+}
+.strap.button[class*="red button"].flat {
+  color: #f44336;
+}
+.strap.button[class*="red button"].flat:not(.disabled):not(.outline), .strap.button[class*="red button"].flat:not(.disabled):hover, .strap.button[class*="red button"].flat:not(.disabled):focus, .strap.button[class*="red button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #f44336;
+}
+.strap.button[class*="red button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="red button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="red button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="red button"].flat:not(.disabled):active, .strap.button[class*="red button"].flat:not(.disabled).active {
+  background-color: #f22718;
+}
+.strap.button[class*="red button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="red button"].flat:not(.disabled):not(.outline):active {
+  background-color: #de1b0c;
+}
+
+.strap.button[class*="brown button"] {
+  border-color: #cd9c7d;
+  color: #a5673f;
+}
+.strap.button[class*="brown button"]:not(.outline) {
+  background-color: rgba(191, 128, 88, 0.3);
+}
+.strap.button[class*="brown button"].toggled {
+  box-shadow: 0 0 10px 2px #492d1c inset;
+}
+.strap.button[class*="brown button"]:not(.disabled):hover, .strap.button[class*="brown button"]:not(.disabled):focus, .strap.button[class*="brown button"]:not(.disabled).selected {
+  color: #8e5936;
+}
+.strap.button[class*="brown button"]:not(.disabled):hover:not(.outline), .strap.button[class*="brown button"]:not(.disabled):focus:not(.outline), .strap.button[class*="brown button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(191, 128, 88, 0.4);
+}
+.strap.button[class*="brown button"]:not(.disabled):active, .strap.button[class*="brown button"]:not(.disabled).active {
+  color: #774a2d;
+}
+.strap.button[class*="brown button"]:not(.disabled):active:not(.outline), .strap.button[class*="brown button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(191, 128, 88, 0.5);
+}
+.strap.button[class*="brown button"].flat {
+  color: #a5673f;
+}
+.strap.button[class*="brown button"].flat:not(.disabled):not(.outline), .strap.button[class*="brown button"].flat:not(.disabled):hover, .strap.button[class*="brown button"].flat:not(.disabled):focus, .strap.button[class*="brown button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #a5673f;
+}
+.strap.button[class*="brown button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="brown button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="brown button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="brown button"].flat:not(.disabled):active, .strap.button[class*="brown button"].flat:not(.disabled).active {
+  background-color: #8e5936;
+}
+.strap.button[class*="brown button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="brown button"].flat:not(.disabled):not(.outline):active {
+  background-color: #774a2d;
+}
+
+.strap.button[class*="grey button"] {
+  border-color: #d1d1d1;
+  color: #9e9e9e;
+}
+.strap.button[class*="grey button"]:not(.outline) {
+  background-color: rgba(184, 184, 184, 0.3);
+}
+.strap.button[class*="grey button"].toggled {
+  box-shadow: 0 0 10px 2px #5e5e5e inset;
+}
+.strap.button[class*="grey button"]:not(.disabled):hover, .strap.button[class*="grey button"]:not(.disabled):focus, .strap.button[class*="grey button"]:not(.disabled).selected {
+  color: #8e8e8e;
+}
+.strap.button[class*="grey button"]:not(.disabled):hover:not(.outline), .strap.button[class*="grey button"]:not(.disabled):focus:not(.outline), .strap.button[class*="grey button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(184, 184, 184, 0.4);
+}
+.strap.button[class*="grey button"]:not(.disabled):active, .strap.button[class*="grey button"]:not(.disabled).active {
+  color: #7e7e7e;
+}
+.strap.button[class*="grey button"]:not(.disabled):active:not(.outline), .strap.button[class*="grey button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(184, 184, 184, 0.5);
+}
+.strap.button[class*="grey button"].flat {
+  color: #9e9e9e;
+}
+.strap.button[class*="grey button"].flat:not(.disabled):not(.outline), .strap.button[class*="grey button"].flat:not(.disabled):hover, .strap.button[class*="grey button"].flat:not(.disabled):focus, .strap.button[class*="grey button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #9e9e9e;
+}
+.strap.button[class*="grey button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="grey button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="grey button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="grey button"].flat:not(.disabled):active, .strap.button[class*="grey button"].flat:not(.disabled).active {
+  background-color: #8e8e8e;
+}
+.strap.button[class*="grey button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="grey button"].flat:not(.disabled):not(.outline):active {
+  background-color: #7e7e7e;
+}
+
+.strap.button[class*="blue-grey button"] {
+  border-color: #617385;
+  color: #36404a;
+}
+.strap.button[class*="blue-grey button"]:not(.outline) {
+  background-color: rgba(76, 90, 103, 0.3);
+}
+.strap.button[class*="blue-grey button"].toggled {
+  box-shadow: 0 0 10px 2px black inset;
+}
+.strap.button[class*="blue-grey button"]:not(.disabled):hover, .strap.button[class*="blue-grey button"]:not(.disabled):focus, .strap.button[class*="blue-grey button"]:not(.disabled).selected {
+  color: #293038;
+}
+.strap.button[class*="blue-grey button"]:not(.disabled):hover:not(.outline), .strap.button[class*="blue-grey button"]:not(.disabled):focus:not(.outline), .strap.button[class*="blue-grey button"]:not(.disabled).selected:not(.outline) {
+  background-color: rgba(76, 90, 103, 0.4);
+}
+.strap.button[class*="blue-grey button"]:not(.disabled):active, .strap.button[class*="blue-grey button"]:not(.disabled).active {
+  color: #1b2025;
+}
+.strap.button[class*="blue-grey button"]:not(.disabled):active:not(.outline), .strap.button[class*="blue-grey button"]:not(.disabled).active:not(.outline) {
+  background-color: rgba(76, 90, 103, 0.5);
+}
+.strap.button[class*="blue-grey button"].flat {
+  color: #36404a;
+}
+.strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline), .strap.button[class*="blue-grey button"].flat:not(.disabled):hover, .strap.button[class*="blue-grey button"].flat:not(.disabled):focus, .strap.button[class*="blue-grey button"].flat:not(.disabled).selected {
+  color: white;
+  background-color: #36404a;
+}
+.strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline):hover, .strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline):focus, .strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline).selected, .strap.button[class*="blue-grey button"].flat:not(.disabled):active, .strap.button[class*="blue-grey button"].flat:not(.disabled).active {
+  background-color: #293038;
+}
+.strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline).active, .strap.button[class*="blue-grey button"].flat:not(.disabled):not(.outline):active {
+  background-color: #1b2025;
+}
+
+/* Link colors */
+.strap.link[class*="orange link"] {
+  color: #f89416;
+}
+:not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #d57906;
+}
+:not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="orange link"]:not(.secondary):not(.disabled).selected:active {
+  color: #a35d05;
+}
+.strap.link[class*="orange link"].secondary {
+  color: #f99f2f;
+  opacity: 0.5;
+}
+.strap.link[class*="orange link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="orange link"].secondary:not(.disabled):hover, .strap.link[class*="orange link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="orange link"].secondary:not(.disabled).active, .strap.link[class*="orange link"].secondary:not(.disabled):active, .strap.link[class*="orange link"].secondary:not(.disabled).selected.active, .strap.link[class*="orange link"].secondary:not(.disabled).selected:active {
+  color: #a35d05;
+}
+
+.strap.link[class*="amber link"] {
+  color: #ffc107;
+}
+:not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #d39e00;
+}
+:not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="amber link"]:not(.secondary):not(.disabled).selected:active {
+  color: #a07800;
+}
+.strap.link[class*="amber link"].secondary {
+  color: #ffc721;
+  opacity: 0.5;
+}
+.strap.link[class*="amber link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="amber link"].secondary:not(.disabled):hover, .strap.link[class*="amber link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="amber link"].secondary:not(.disabled).active, .strap.link[class*="amber link"].secondary:not(.disabled):active, .strap.link[class*="amber link"].secondary:not(.disabled).selected.active, .strap.link[class*="amber link"].secondary:not(.disabled).selected:active {
+  color: #a07800;
+}
+
+.strap.link[class*="yellow link"] {
+  color: #ffeb3b;
+}
+:not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #ffe608;
+}
+:not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="yellow link"]:not(.secondary):not(.disabled).selected:active {
+  color: #d4be00;
+}
+.strap.link[class*="yellow link"].secondary {
+  color: #ffee55;
+  opacity: 0.5;
+}
+.strap.link[class*="yellow link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="yellow link"].secondary:not(.disabled):hover, .strap.link[class*="yellow link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="yellow link"].secondary:not(.disabled).active, .strap.link[class*="yellow link"].secondary:not(.disabled):active, .strap.link[class*="yellow link"].secondary:not(.disabled).selected.active, .strap.link[class*="yellow link"].secondary:not(.disabled).selected:active {
+  color: #d4be00;
+}
+
+.strap.link[class*="lime link"] {
+  color: #cddc39;
+}
+:not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #b2c022;
+}
+:not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="lime link"]:not(.secondary):not(.disabled).selected:active {
+  color: #89951a;
+}
+.strap.link[class*="lime link"].secondary {
+  color: #d2e04f;
+  opacity: 0.5;
+}
+.strap.link[class*="lime link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="lime link"].secondary:not(.disabled):hover, .strap.link[class*="lime link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="lime link"].secondary:not(.disabled).active, .strap.link[class*="lime link"].secondary:not(.disabled):active, .strap.link[class*="lime link"].secondary:not(.disabled).selected.active, .strap.link[class*="lime link"].secondary:not(.disabled).selected:active {
+  color: #89951a;
+}
+
+.strap.link[class*="green link"] {
+  color: #8bc34a;
+}
+:not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #71a436;
+}
+:not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="green link"]:not(.secondary):not(.disabled).selected:active {
+  color: #577d2a;
+}
+.strap.link[class*="green link"].secondary {
+  color: #97c95d;
+  opacity: 0.5;
+}
+.strap.link[class*="green link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="green link"].secondary:not(.disabled):hover, .strap.link[class*="green link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="green link"].secondary:not(.disabled).active, .strap.link[class*="green link"].secondary:not(.disabled):active, .strap.link[class*="green link"].secondary:not(.disabled).selected.active, .strap.link[class*="green link"].secondary:not(.disabled).selected:active {
+  color: #577d2a;
+}
+
+.strap.link[class*="teal link"] {
+  color: #009688;
+}
+:not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #00635a;
+}
+:not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="teal link"]:not(.secondary):not(.disabled).selected:active {
+  color: #00302c;
+}
+.strap.link[class*="teal link"].secondary {
+  color: #00b09f;
+  opacity: 0.5;
+}
+.strap.link[class*="teal link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="teal link"].secondary:not(.disabled):hover, .strap.link[class*="teal link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="teal link"].secondary:not(.disabled).active, .strap.link[class*="teal link"].secondary:not(.disabled):active, .strap.link[class*="teal link"].secondary:not(.disabled).selected.active, .strap.link[class*="teal link"].secondary:not(.disabled).selected:active {
+  color: #00302c;
+}
+
+.strap.link[class*="cyan link"] {
+  color: #00bcd4;
+}
+:not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #008fa1;
+}
+:not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="cyan link"]:not(.secondary):not(.disabled).selected:active {
+  color: #00626e;
+}
+.strap.link[class*="cyan link"].secondary {
+  color: #00d3ee;
+  opacity: 0.5;
+}
+.strap.link[class*="cyan link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="cyan link"].secondary:not(.disabled):hover, .strap.link[class*="cyan link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="cyan link"].secondary:not(.disabled).active, .strap.link[class*="cyan link"].secondary:not(.disabled):active, .strap.link[class*="cyan link"].secondary:not(.disabled).selected.active, .strap.link[class*="cyan link"].secondary:not(.disabled).selected:active {
+  color: #00626e;
+}
+
+.strap.link[class*="blue link"] {
+  color: #2196f3;
+}
+:not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #0c7cd5;
+}
+:not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="blue link"]:not(.secondary):not(.disabled).selected:active {
+  color: #0960a5;
+}
+.strap.link[class*="blue link"].secondary {
+  color: #39a1f4;
+  opacity: 0.5;
+}
+.strap.link[class*="blue link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="blue link"].secondary:not(.disabled):hover, .strap.link[class*="blue link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="blue link"].secondary:not(.disabled).active, .strap.link[class*="blue link"].secondary:not(.disabled):active, .strap.link[class*="blue link"].secondary:not(.disabled).selected.active, .strap.link[class*="blue link"].secondary:not(.disabled).selected:active {
+  color: #0960a5;
+}
+
+.strap.link[class*="indigo link"] {
+  color: #3f51b5;
+}
+:not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #32408f;
+}
+:not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="indigo link"]:not(.secondary):not(.disabled).selected:active {
+  color: #252f69;
+}
+.strap.link[class*="indigo link"].secondary {
+  color: #4d5ec1;
+  opacity: 0.5;
+}
+.strap.link[class*="indigo link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="indigo link"].secondary:not(.disabled):hover, .strap.link[class*="indigo link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="indigo link"].secondary:not(.disabled).active, .strap.link[class*="indigo link"].secondary:not(.disabled):active, .strap.link[class*="indigo link"].secondary:not(.disabled).selected.active, .strap.link[class*="indigo link"].secondary:not(.disabled).selected:active {
+  color: #252f69;
+}
+
+.strap.link[class*="purple link"] {
+  color: #9b59b6;
+}
+:not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #804399;
+}
+:not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="purple link"]:not(.secondary):not(.disabled).selected:active {
+  color: #623475;
+}
+.strap.link[class*="purple link"].secondary {
+  color: #a66bbe;
+  opacity: 0.5;
+}
+.strap.link[class*="purple link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="purple link"].secondary:not(.disabled):hover, .strap.link[class*="purple link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="purple link"].secondary:not(.disabled).active, .strap.link[class*="purple link"].secondary:not(.disabled):active, .strap.link[class*="purple link"].secondary:not(.disabled).selected.active, .strap.link[class*="purple link"].secondary:not(.disabled).selected:active {
+  color: #623475;
+}
+
+.strap.link[class*="pink link"] {
+  color: #e91e63;
+}
+:not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #c1134e;
+}
+:not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="pink link"]:not(.secondary):not(.disabled).selected:active {
+  color: #930e3b;
+}
+.strap.link[class*="pink link"].secondary {
+  color: #eb3573;
+  opacity: 0.5;
+}
+.strap.link[class*="pink link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="pink link"].secondary:not(.disabled):hover, .strap.link[class*="pink link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="pink link"].secondary:not(.disabled).active, .strap.link[class*="pink link"].secondary:not(.disabled):active, .strap.link[class*="pink link"].secondary:not(.disabled).selected.active, .strap.link[class*="pink link"].secondary:not(.disabled).selected:active {
+  color: #930e3b;
+}
+
+.strap.link[class*="red link"] {
+  color: #f44336;
+}
+:not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #ea1c0d;
+}
+:not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="red link"]:not(.secondary):not(.disabled).selected:active {
+  color: #ba160a;
+}
+.strap.link[class*="red link"].secondary {
+  color: #f55a4e;
+  opacity: 0.5;
+}
+.strap.link[class*="red link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="red link"].secondary:not(.disabled):hover, .strap.link[class*="red link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="red link"].secondary:not(.disabled).active, .strap.link[class*="red link"].secondary:not(.disabled):active, .strap.link[class*="red link"].secondary:not(.disabled).selected.active, .strap.link[class*="red link"].secondary:not(.disabled).selected:active {
+  color: #ba160a;
+}
+
+.strap.link[class*="brown link"] {
+  color: #a5673f;
+}
+:not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #805031;
+}
+:not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="brown link"]:not(.secondary):not(.disabled).selected:active {
+  color: #5b3923;
+}
+.strap.link[class*="brown link"].secondary {
+  color: #b77346;
+  opacity: 0.5;
+}
+.strap.link[class*="brown link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="brown link"].secondary:not(.disabled):hover, .strap.link[class*="brown link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="brown link"].secondary:not(.disabled).active, .strap.link[class*="brown link"].secondary:not(.disabled):active, .strap.link[class*="brown link"].secondary:not(.disabled).selected.active, .strap.link[class*="brown link"].secondary:not(.disabled).selected:active {
+  color: #5b3923;
+}
+
+.strap.link[class*="grey link"] {
+  color: #9e9e9e;
+}
+:not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #858585;
+}
+:not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="grey link"]:not(.secondary):not(.disabled).selected:active {
+  color: #6b6b6b;
+}
+.strap.link[class*="grey link"].secondary {
+  color: #ababab;
+  opacity: 0.5;
+}
+.strap.link[class*="grey link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="grey link"].secondary:not(.disabled):hover, .strap.link[class*="grey link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="grey link"].secondary:not(.disabled).active, .strap.link[class*="grey link"].secondary:not(.disabled):active, .strap.link[class*="grey link"].secondary:not(.disabled).selected.active, .strap.link[class*="grey link"].secondary:not(.disabled).selected:active {
+  color: #6b6b6b;
+}
+
+.strap.link[class*="blue-grey link"] {
+  color: #36404a;
+}
+:not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled).selected:hover {
+  color: #20272d;
+}
+:not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link[class*="blue-grey link"]:not(.secondary):not(.disabled).selected:active {
+  color: #0b0d0f;
+}
+.strap.link[class*="blue-grey link"].secondary {
+  color: #414d59;
+  opacity: 0.5;
+}
+.strap.link[class*="blue-grey link"].secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link[class*="blue-grey link"].secondary:not(.disabled):hover, .strap.link[class*="blue-grey link"].secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link[class*="blue-grey link"].secondary:not(.disabled).active, .strap.link[class*="blue-grey link"].secondary:not(.disabled):active, .strap.link[class*="blue-grey link"].secondary:not(.disabled).selected.active, .strap.link[class*="blue-grey link"].secondary:not(.disabled).selected:active {
+  color: #0b0d0f;
+}
+
+/* Menus */
+.strap.menu[class*="orange menu"]:not(.left) {
+  background-color: #f89416;
+}
+.strap.menu[class*="orange menu"]:not(.left):not(.flat) {
+  border-color: #c87206;
+}
+.strap.menu[class*="orange menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #c87206;
+}
+.strap.menu[class*="orange menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="orange menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="orange menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #ed8707;
+}
+.strap.menu[class*="orange menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="orange menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #d57906;
+}
+
+.strap.menu[class*="amber menu"]:not(.left) {
+  background-color: #ffc107;
+}
+.strap.menu[class*="amber menu"]:not(.left):not(.flat) {
+  border-color: #c69500;
+}
+.strap.menu[class*="amber menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #c69500;
+}
+.strap.menu[class*="amber menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="amber menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="amber menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #edb100;
+}
+.strap.menu[class*="amber menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="amber menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #d39e00;
+}
+
+.strap.menu[class*="yellow menu"]:not(.left) {
+  background-color: #ffeb3b;
+}
+.strap.menu[class*="yellow menu"]:not(.left):not(.flat) {
+  border-color: #fae100;
+}
+.strap.menu[class*="yellow menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #fae100;
+}
+.strap.menu[class*="yellow menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="yellow menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="yellow menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #ffe822;
+}
+.strap.menu[class*="yellow menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="yellow menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #ffe608;
+}
+
+.strap.menu[class*="lime menu"]:not(.left) {
+  background-color: #cddc39;
+}
+.strap.menu[class*="lime menu"]:not(.left):not(.flat) {
+  border-color: #a7b520;
+}
+.strap.menu[class*="lime menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #a7b520;
+}
+.strap.menu[class*="lime menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="lime menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="lime menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #c6d626;
+}
+.strap.menu[class*="lime menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="lime menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #b2c022;
+}
+
+.strap.menu[class*="green menu"]:not(.left) {
+  background-color: #8bc34a;
+}
+.strap.menu[class*="green menu"]:not(.left):not(.flat) {
+  border-color: #6a9a33;
+}
+.strap.menu[class*="green menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #6a9a33;
+}
+.strap.menu[class*="green menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="green menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="green menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #7eb73d;
+}
+.strap.menu[class*="green menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="green menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #71a436;
+}
+
+.strap.menu[class*="teal menu"]:not(.left) {
+  background-color: #009688;
+}
+.strap.menu[class*="teal menu"]:not(.left):not(.flat) {
+  border-color: #00564e;
+}
+.strap.menu[class*="teal menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #00564e;
+}
+.strap.menu[class*="teal menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="teal menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="teal menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #007d71;
+}
+.strap.menu[class*="teal menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="teal menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #00635a;
+}
+
+.strap.menu[class*="cyan menu"]:not(.left) {
+  background-color: #00bcd4;
+}
+.strap.menu[class*="cyan menu"]:not(.left):not(.flat) {
+  border-color: #008394;
+}
+.strap.menu[class*="cyan menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #008394;
+}
+.strap.menu[class*="cyan menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="cyan menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="cyan menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #00a5bb;
+}
+.strap.menu[class*="cyan menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="cyan menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #008fa1;
+}
+
+.strap.menu[class*="blue menu"]:not(.left) {
+  background-color: #2196f3;
+}
+.strap.menu[class*="blue menu"]:not(.left):not(.flat) {
+  border-color: #0b75c9;
+}
+.strap.menu[class*="blue menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #0b75c9;
+}
+.strap.menu[class*="blue menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="blue menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="blue menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #0d8aee;
+}
+.strap.menu[class*="blue menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="blue menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #0c7cd5;
+}
+
+.strap.menu[class*="indigo menu"]:not(.left) {
+  background-color: #3f51b5;
+}
+.strap.menu[class*="indigo menu"]:not(.left):not(.flat) {
+  border-color: #2f3c86;
+}
+.strap.menu[class*="indigo menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #2f3c86;
+}
+.strap.menu[class*="indigo menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="indigo menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="indigo menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #3849a2;
+}
+.strap.menu[class*="indigo menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="indigo menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #32408f;
+}
+
+.strap.menu[class*="purple menu"]:not(.left) {
+  background-color: #9b59b6;
+}
+.strap.menu[class*="purple menu"]:not(.left):not(.flat) {
+  border-color: #793f90;
+}
+.strap.menu[class*="purple menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #793f90;
+}
+.strap.menu[class*="purple menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="purple menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="purple menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #8f4bab;
+}
+.strap.menu[class*="purple menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="purple menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #804399;
+}
+
+.strap.menu[class*="pink menu"]:not(.left) {
+  background-color: #e91e63;
+}
+.strap.menu[class*="pink menu"]:not(.left):not(.flat) {
+  border-color: #b61249;
+}
+.strap.menu[class*="pink menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #b61249;
+}
+.strap.menu[class*="pink menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="pink menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="pink menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #d81558;
+}
+.strap.menu[class*="pink menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="pink menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #c1134e;
+}
+
+.strap.menu[class*="red menu"]:not(.left) {
+  background-color: #f44336;
+}
+.strap.menu[class*="red menu"]:not(.left):not(.flat) {
+  border-color: #de1b0c;
+}
+.strap.menu[class*="red menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #de1b0c;
+}
+.strap.menu[class*="red menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="red menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="red menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #f32c1e;
+}
+.strap.menu[class*="red menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="red menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #ea1c0d;
+}
+
+.strap.menu[class*="brown menu"]:not(.left) {
+  background-color: #a5673f;
+}
+.strap.menu[class*="brown menu"]:not(.left):not(.flat) {
+  border-color: #774a2d;
+}
+.strap.menu[class*="brown menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #774a2d;
+}
+.strap.menu[class*="brown menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="brown menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="brown menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #935b38;
+}
+.strap.menu[class*="brown menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="brown menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #805031;
+}
+
+.strap.menu[class*="grey menu"]:not(.left) {
+  background-color: #9e9e9e;
+}
+.strap.menu[class*="grey menu"]:not(.left):not(.flat) {
+  border-color: #7e7e7e;
+}
+.strap.menu[class*="grey menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #7e7e7e;
+}
+.strap.menu[class*="grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #919191;
+}
+.strap.menu[class*="grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #858585;
+}
+
+.strap.menu[class*="blue-grey menu"]:not(.left) {
+  background-color: #36404a;
+}
+.strap.menu[class*="blue-grey menu"]:not(.left):not(.flat) {
+  border-color: #1b2025;
+}
+.strap.menu[class*="blue-grey menu"]:not(.left):not(.flat) > :not(:first-child) {
+  border-left-color: #1b2025;
+}
+.strap.menu[class*="blue-grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):hover, .strap.menu[class*="blue-grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).selected, .strap.menu[class*="blue-grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #2b333b;
+}
+.strap.menu[class*="blue-grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer):active, .strap.menu[class*="blue-grey menu"]:not(.left) > :not(.collapse):not(.menu-dropdown):not(.spacer).active {
+  background-color: #20272d;
+}
+
+/* Import required fonts if needed */
+/* Highest level overrides */
+html {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: Roboto, "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #252627;
+  background-color: #f0f0f0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/* Paragraph overrides */
+p {
+  line-height: 1rem;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+p:first-child {
+  margin-top: 0;
+}
+
+a:visited, a:link {
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+label {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+ul {
+  padding-left: 1rem;
+}
+
+.small-margin {
+  margin: 0.5rem;
+}
+
+.large-margin {
+  margin: 1rem;
+}
+
+.strap.vue-app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: transparent;
+}
+
+.strap.link {
+  cursor: pointer;
+  transition: border-color 0.1s linear, background-color 0.1s linear, color 0.1s linear, color 0.1s linear, opacity 0.35s ease;
+  text-decoration: none;
+  color: #41A317;
+}
+.strap.link.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.strap.link:not(.secondary).selected {
+  font-weight: 600;
+}
+:not(.menu) > .strap.link:not(.secondary):not(.disabled):hover, :not(.menu) > .strap.link:not(.secondary):not(.disabled).selected:hover {
+  color: #2f7611;
+}
+:not(.menu) > .strap.link:not(.secondary):not(.disabled).active, :not(.menu) > .strap.link:not(.secondary):not(.disabled):active, :not(.menu) > .strap.link:not(.secondary):not(.disabled).selected.active, :not(.menu) > .strap.link:not(.secondary):not(.disabled).selected:active {
+  color: #1d4a0a;
+}
+.strap.link.primary {
+  color: #41A317;
+}
+.strap.link.primary:not(.disabled):hover, .strap.link.primary:not(.disabled).selected:hover {
+  color: #2f7611;
+}
+.strap.link.primary:not(.disabled).active, .strap.link.primary:not(.disabled):active, .strap.link.primary:not(.disabled).selected.active, .strap.link.primary:not(.disabled).selected:active {
+  color: #1d4a0a;
+}
+.strap.link.secondary {
+  color: #313334;
+  opacity: 0.5;
+}
+.strap.link.secondary:not(.disabled).selected {
+  opacity: 0.75;
+}
+.strap.link.secondary:not(.disabled):hover, .strap.link.secondary:not(.disabled).selected:hover {
+  opacity: 1;
+}
+.strap.link.secondary:not(.disabled).active, .strap.link.secondary:not(.disabled):active, .strap.link.secondary:not(.disabled).selected.active, .strap.link.secondary:not(.disabled).selected:active {
+  color: black;
+}
+.strap.link:not(.disabled) {
+  /* If link is under a menu, inherit the menu color, if any */
+}
+.strap.menu > .strap.link:not(.disabled), .strap.menu > .menu.right > .strap.link:not(.disabled), .strap.menu > .strap.container > .strap.link:not(.disabled), .strap.menu > .strap.container > .menu.right > .strap.link:not(.disabled) {
+  color: inherit;
+}
+
+/* Icons definition */
+.strap.icon {
+  display: inline-block;
+}
+.strap.icon.fitted {
+  width: auto;
+}
+.strap.icon:not(.disabled).clickable {
+  cursor: pointer;
+  opacity: 0.8;
+}
+@media (pointer: coarse) {
+  .strap.icon:not(.disabled).clickable:not(.unresponsive) {
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -0.0667em;
+  }
+}
+.strap.icon:not(.disabled).clickable:hover {
+  opacity: 1;
+}
+.strap.icon.disabled {
+  opacity: 0.5;
+}
+.strap.icon.disabled.clickable {
+  cursor: not-allowed;
+}
+.strap.icon.red-action {
+  color: #de1b0c;
+}
+.strap.icon.green-action {
+  color: #6a9a33;
+}
+.strap.icon.positive {
+  color: #28a745;
+}
+.strap.icon.negative {
+  color: #db2828;
+}
+.strap.icon.warning {
+  color: #fbbd08;
+}
+.strap.icon.secondary {
+  color: #57595b;
+}
+.strap.icon.symbol {
+  line-height: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.strap.container > .strap.header {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.strap.header.disabled {
+  opacity: 0.7;
+}
+.strap.header.dividing {
+  border-bottom: 1px solid #ced4da;
+  padding-bottom: 0.2rem;
+}
+.strap.header.block {
+  background-color: #ebeef0;
+}
+.strap.header.block, .strap.header.attached {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.strap.header.center {
+  text-align: center;
+}
+.strap.header.attached:first-child, .strap.header.attached.top {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.strap.header.attached:last-child, .strap.header.attached.bottom {
+  border-top: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.strap.header.attached:not(:first-child):not(:last-child):not(.top):not(.bottom) {
+  border-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.strap.header > .header.sub {
+  font-weight: 400;
+  color: #6f7376;
+  line-height: 1.2rem;
+}
+.strap.header.sub {
+  margin-bottom: 0.1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.strap.header.sub > .header.sub {
+  text-transform: initial;
+}
+.strap.header:first-child {
+  margin-top: 0;
+}
+.strap.header:last-child {
+  margin-bottom: 0;
+}
+
+/* Containers */
+.strap.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.strap.container.main {
+  padding: 2rem 0 7rem;
+}
+.strap.container.horizontal {
+  flex-direction: row;
+}
+.strap.container.splitter.horizontal {
+  flex-direction: column;
+}
+.strap.container.splitter.vertical {
+  flex-direction: row;
+}
+.strap.container.fluid {
+  flex: 1;
+}
+.strap.container.padded {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.strap.container.full-padded {
+  padding: 1rem;
+}
+.strap.container.responsive {
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .strap.container.responsive {
+    border-left: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    width: 723px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .strap.container.responsive {
+    border-left: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    width: 933px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .strap.container.responsive {
+    border-left: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    width: 1127px;
+  }
+}
+.strap.container.text {
+  max-width: 700px;
+}
+
+/* How much alpha will be modified for first box shadow param */
+/* The base padding of a segment */
+/* The base margin of a segment */
+/* Base segment definition */
+.strap.segment {
+  box-shadow: 0 1px 2px 0 #ced4da;
+  /* Circular segment */
+}
+.strap.segments > .strap.segment {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+}
+.strap.segment:first-child {
+  margin-top: 0;
+}
+.strap.segment:last-child {
+  margin-bottom: 0;
+}
+.strap.segment.circular {
+  margin: 0;
+  display: inline-flex;
+  padding: 2rem;
+  border-radius: 500rem;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+}
+
+.strap.segment, .strap.segments > .segment {
+  padding: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Raised segment */
+.strap.segment.raised,
+.strap.segments.raised {
+  box-shadow: 0 2px 4px 0 rgba(206, 212, 218, 0.2), 0 2px 10px 0 #ced4da;
+}
+
+/* Vertical segment */
+.strap.segment.vertical,
+.strap.segments.vertical > .segment {
+  margin: 0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  box-shadow: none;
+}
+
+.strap.segment.vertical:last-child,
+.strap.segments.vertical > .segment:last-child {
+  border-bottom: 0;
+}
+
+/* Padded segment */
+.strap.segment.small.padded,
+.strap.segments:not(.padded) > .segment.small.padded,
+.strap.segments.padded > .segment.small.padded,
+.strap.segments.large.padded > .segment.small.padded,
+.strap.segments.small.padded > .segment {
+  padding: 0.5rem;
+}
+
+.strap.segment.normal.padded,
+.strap.segments:not(.padded) > .segment.normal.padded,
+.strap.segments.padded > .segment.normal.padded,
+.strap.segments.large.padded > .segment.normal.padded,
+.strap.segments.normal.padded > .segment {
+  padding: 1rem;
+}
+
+.strap.segment.large.padded,
+.strap.segments:not(.padded) > .segment.large.padded,
+.strap.segments.padded > .segment.large.padded,
+.strap.segments.large.padded > .segment.large.padded,
+.strap.segments.large.padded > .segment {
+  padding: 1.5rem;
+}
+
+.strap.segment.very.large.padded,
+.strap.segments:not(.padded) > .segment.very.large.padded,
+.strap.segments.padded > .segment.very.large.padded,
+.strap.segments.large.padded > .segment.very.large.padded,
+.strap.segments.very.large.padded > .segment {
+  padding: 3rem;
+}
+
+/* Loading segment */
+.strap.segment.loading,
+.strap.segments.loading {
+  cursor: default;
+  pointer-events: none;
+  position: relative;
+  transition: all 0s linear;
+  box-shadow: none;
+}
+
+.strap.segment.loading {
+  border-color: rgba(235, 238, 240, 0.6);
+}
+
+.strap.segment.loading::before,
+.strap.segments.loading::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  z-index: 100;
+}
+
+.strap.segment.loading::after,
+.strap.segments.loading::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 3rem;
+  height: 3rem;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 0.2em;
+  -webkit-box-shadow: 0 0 0 1px transparent;
+  box-shadow: 0 0 0 1px transparent;
+  visibility: visible;
+  z-index: 101;
+}
+
+/* Segment alignment */
+.strap.segment.left.aligned,
+.strap.segments:not(.aligned) > .segment.left.aligned,
+.strap.segments.aligned > .segment.left.aligned,
+.strap.segments.left.aligned > .segment {
+  text-align: left;
+}
+
+.strap.segment.center.aligned,
+.strap.segments:not(.aligned) > .segment.center.aligned,
+.strap.segments.aligned > .segment.center.aligned,
+.strap.segments.center.aligned > .segment {
+  text-align: center;
+}
+
+.strap.segment.right.aligned,
+.strap.segments:not(.aligned) > .segment.right.aligned,
+.strap.segments.aligned > .segment.right.aligned,
+.strap.segments.right.aligned > .segment {
+  text-align: right;
+}
+
+/* Basic segment */
+.strap.segment.basic,
+.strap.segments.basic > .segment {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Segments */
+.strap.segments {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px 0 #ced4da;
+  border-radius: 0.25rem;
+}
+
+.strap.segments:first-child {
+  margin-top: 0;
+}
+
+.strap.segments:last-child {
+  margin-bottom: 0;
+}
+
+/* Segments children */
+.strap.segments:not(.vertical) > .segment:first-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.strap.segments:not(.vertical) > .segment:not(:last-child):not(:first-child) {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+.strap.segments > .segment:last-child {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Segments box shadow override */
+.strap.segments.basic,
+.strap.segments.vertical {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  /* mobile-expanded segments */
+  .strap.segment.mobile-expanded,
+.strap.segments.mobile-expanded,
+.strap.segments.mobile-expanded > .segment {
+    border-right: 0;
+    border-left: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 0;
+  }
+
+  .strap.segment.mobile-expanded:first-child,
+.strap.segments.mobile-expanded > .segment:first-child {
+    border-top: none;
+  }
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.strap.button {
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border: 1px solid #ced4da;
+  color: #57595b;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: border-color 0.1s linear, background-color 0.1s linear, color 0.1s linear, box-shadow 0.05s linear;
+  -moz-user-select: none;
+  user-select: none;
+}
+.strap.button:not(.outline) {
+  background-color: #fff;
+}
+.strap.button.outline {
+  background-color: transparent;
+}
+.strap.button.toggled {
+  box-shadow: 0 0 10px 2px #5e5e5e inset;
+}
+.strap.button.small {
+  padding: 0.25rem 0.5rem;
+  line-height: 1rem;
+}
+.strap.button.disabled {
+  cursor: default;
+}
+.strap.button.disabled.text-disabled {
+  color: rgba(37, 38, 39, 0.5);
+}
+.strap.button.disabled:not(.text-disabled) {
+  opacity: 0.5;
+}
+.strap.button:not(.disabled):hover, .strap.button:not(.disabled):focus, .strap.button:not(.disabled).selected {
+  border-color: #a2aeb9;
+  color: #313334;
+}
+.strap.button:not(.disabled):hover:not(.outline), .strap.button:not(.disabled):focus:not(.outline), .strap.button:not(.disabled).selected:not(.outline) {
+  background-color: #f2f2f2;
+}
+.strap.button:not(.disabled):active, .strap.button:not(.disabled).active {
+  border-color: #8594a3;
+  color: #252627;
+}
+.strap.button:not(.disabled):active:not(.outline), .strap.button:not(.disabled).active:not(.outline) {
+  background-color: #e6e6e6;
+}
+.strap.button.flat {
+  color: #9e9e9e;
+  border: 0;
+}
+.strap.button.flat:not(.disabled):not(.outline), .strap.button.flat:not(.disabled):hover, .strap.button.flat:not(.disabled):focus, .strap.button.flat:not(.disabled).selected {
+  color: white;
+  background-color: #9e9e9e;
+}
+.strap.button.flat:not(.disabled):not(.outline):hover, .strap.button.flat:not(.disabled):not(.outline):focus, .strap.button.flat:not(.disabled):not(.outline).selected, .strap.button.flat:not(.disabled):active, .strap.button.flat:not(.disabled).active {
+  background-color: #919191;
+}
+.strap.button.flat:not(.disabled):not(.outline).active, .strap.button.flat:not(.disabled):not(.outline):active {
+  background-color: #858585;
+}
+.strap.button.positive {
+  border-color: #86e29b;
+  color: #34ce57;
+}
+.strap.button.positive:not(.outline) {
+  background-color: rgba(196, 241, 206, 0.5);
+}
+.strap.button.positive.toggled {
+  box-shadow: 0 0 10px 2px #0f401b inset;
+}
+.strap.button.positive:not(.disabled):hover, .strap.button.positive:not(.disabled):focus, .strap.button.positive:not(.disabled).selected {
+  border-color: #5dd879;
+  color: #2dbc4e;
+}
+.strap.button.positive:not(.disabled):hover:not(.outline), .strap.button.positive:not(.disabled):focus:not(.outline), .strap.button.positive:not(.disabled).selected:not(.outline) {
+  background-color: rgba(175, 236, 189, 0.5);
+}
+.strap.button.positive:not(.disabled):active, .strap.button.positive:not(.disabled).active {
+  border-color: #28a745;
+  color: #28a745;
+}
+.strap.button.positive:not(.disabled):active:not(.outline), .strap.button.positive:not(.disabled).active:not(.outline) {
+  background-color: rgba(155, 231, 172, 0.5);
+}
+.strap.button.positive.flat {
+  color: #28a745;
+}
+.strap.button.positive.flat:not(.disabled):not(.outline), .strap.button.positive.flat:not(.disabled):hover, .strap.button.positive.flat:not(.disabled):focus, .strap.button.positive.flat:not(.disabled).selected {
+  color: white;
+  background-color: #28a745;
+}
+.strap.button.positive.flat:not(.disabled):not(.outline):hover, .strap.button.positive.flat:not(.disabled):not(.outline):focus, .strap.button.positive.flat:not(.disabled):not(.outline).selected, .strap.button.positive.flat:not(.disabled):active, .strap.button.positive.flat:not(.disabled).active {
+  background-color: #23923d;
+}
+.strap.button.positive.flat:not(.disabled):not(.outline).active, .strap.button.positive.flat:not(.disabled):not(.outline):active {
+  background-color: #1e7e34;
+}
+.strap.button.negative {
+  border-color: #f1abab;
+  color: #e25454;
+}
+.strap.button.negative:not(.outline) {
+  background-color: rgba(252, 237, 237, 0.5);
+}
+.strap.button.negative.toggled {
+  box-shadow: 0 0 10px 2px #711313 inset;
+}
+.strap.button.negative:not(.disabled):hover, .strap.button.negative:not(.disabled):focus, .strap.button.negative:not(.disabled).selected {
+  border-color: #ea7f7f;
+  color: #df3e3e;
+}
+.strap.button.negative:not(.disabled):hover:not(.outline), .strap.button.negative:not(.disabled):focus:not(.outline), .strap.button.negative:not(.disabled).selected:not(.outline) {
+  background-color: rgba(248, 215, 215, 0.5);
+}
+.strap.button.negative:not(.disabled):active, .strap.button.negative:not(.disabled).active {
+  border-color: #db2828;
+  color: #db2828;
+}
+.strap.button.negative:not(.disabled):active:not(.outline), .strap.button.negative:not(.disabled).active:not(.outline) {
+  background-color: rgba(245, 193, 193, 0.5);
+}
+.strap.button.negative.flat {
+  color: #db2828;
+}
+.strap.button.negative.flat:not(.disabled):not(.outline), .strap.button.negative.flat:not(.disabled):hover, .strap.button.negative.flat:not(.disabled):focus, .strap.button.negative.flat:not(.disabled).selected {
+  color: white;
+  background-color: #db2828;
+}
+.strap.button.negative.flat:not(.disabled):not(.outline):hover, .strap.button.negative.flat:not(.disabled):not(.outline):focus, .strap.button.negative.flat:not(.disabled):not(.outline).selected, .strap.button.negative.flat:not(.disabled):active, .strap.button.negative.flat:not(.disabled).active {
+  background-color: #c82121;
+}
+.strap.button.negative.flat:not(.disabled):not(.outline).active, .strap.button.negative.flat:not(.disabled):not(.outline):active {
+  background-color: #b21e1e;
+}
+
+/* Button groups */
+.strap.button-group {
+  display: flex;
+}
+.strap.button-group.centered {
+  justify-content: center;
+}
+.strap.button-group > .strap.button:not(:first-child):not(.left-extremum) {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.strap.button-group > .strap.button:not(:last-child):not(.right-extremum) {
+  margin-right: 0;
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.strap.button-group > .strap.button:not(.disabled):hover, .strap.button-group > .strap.button:not(.disabled):focus, .strap.button-group > .strap.button:not(.disabled).selected, .strap.button-group > .strap.button:not(.disabled):active, .strap.button-group > .strap.button:not(.disabled).active {
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+.strap.button-group > .strap.button:not(.disabled):hover + .strap.button, .strap.button-group > .strap.button:not(.disabled):focus + .strap.button, .strap.button-group > .strap.button:not(.disabled).selected + .strap.button, .strap.button-group > .strap.button:not(.disabled):active + .strap.button, .strap.button-group > .strap.button:not(.disabled).active + .strap.button {
+  border-left-width: 0;
+}
+
+/* Backup
+
+&:not(:last-child):hover + .strap.button,
+    &:not(:last-child):focus + .strap.button,
+    &:not(:last-child).selected + .strap.button {
+      border-left-color: $borderHoverColor;
+    }
+    &:not(:last-child):active + .strap.button,
+    &:not(:last-child).active + .strap.button {
+      border-left-color: $borderActiveColor;
+    }
+    &.positive {
+      &:not(:last-child):hover + .strap.button,
+      &:not(:last-child):focus + .strap.button,
+      &:not(:last-child).selected + .strap.button {
+        border-left-color: color-lighten($positiveColor, 4);
+      }
+      &:not(:last-child):active + .strap.button,
+      &:not(:last-child).active + .strap.button {
+        border-left-color: color-lighten($positiveColor, 2);
+      }
+    }
+    &.negative {
+      &:not(:last-child):hover + .strap.button,
+      &:not(:last-child):focus + .strap.button,
+      &:not(:last-child).selected + .strap.button {
+        border-left-color: color-lighten($negativeColor, 4);
+      }
+      &:not(:last-child):active + .strap.button,
+      &:not(:last-child).active + .strap.button {
+        border-left-color: color-lighten($negativeColor, 2);
+      }
+    }
+
+*/
+.strap.menu-wrapper.fixed {
+  height: 50px;
+}
+.strap.menu-wrapper.fixed.large {
+  height: 60px;
+}
+
+.strap.menu {
+  background-color: white;
+  position: relative;
+  display: flex;
+  /* Menu variations */
+  /* Content special rules */
+  /* Content */
+  /* Responsive menus */
+  /* Left menus */
+}
+.strap.menu:not(.flat) {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.strap.menu:not(.flat):not(.left) > :not(:first-child) {
+  border-left: 1px solid #ced4da;
+}
+.strap.menu:not(.flat):not(.left) > :not(.spacer) ~ :last-child {
+  border-right: 1px solid #ced4da;
+}
+.strap.menu.top, .strap.window > .bars > .strap.menu {
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+}
+.strap.menu.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+.strap.menu > .spacer {
+  flex: 1;
+}
+.strap.menu:not(.left) > .spacer {
+  min-width: 0.25rem;
+}
+.strap.menu > .mobile-button {
+  display: none;
+}
+.strap.menu.flat > .strap.sub-menu > .sub-menu {
+  border-top: 0;
+}
+.strap.menu > .brand {
+  font-weight: bold;
+}
+.strap.menu > :not(.spacer):not(.menu-dropdown) {
+  margin: 0;
+  padding: 1rem 1.2rem;
+}
+.strap.menu.large > :not(.spacer) {
+  font-size: 1.2rem;
+}
+.strap.menu.large > :not(.spacer):not(.menu-dropdown) {
+  padding: 1.2rem 1.44rem;
+}
+.strap.menu.small > :not(.spacer) {
+  font-size: 1rem;
+}
+.strap.menu.small > :not(.spacer):not(.menu-dropdown) {
+  padding: 0.4rem 0.72rem;
+}
+.strap.menu.extra-small > :not(.spacer), .strap.window > .bars > .strap.menu > :not(.spacer) {
+  font-size: 1rem;
+}
+.strap.menu.extra-small > :not(.spacer):not(.menu-dropdown), .strap.window > .bars > .strap.menu > :not(.spacer):not(.menu-dropdown) {
+  padding: 0.2rem 0.48rem;
+}
+.strap.menu > .menu-dropdown {
+  display: flex;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  align-items: center;
+}
+.strap.menu > :not(.collapse):not(.menu-dropdown):not(.spacer):not(div):hover, .strap.menu > :not(.collapse):not(.menu-dropdown):not(.spacer):not(div).selected, .strap.menu > :not(.collapse):not(.menu-dropdown):not(.spacer):not(div).active {
+  background-color: #f2f2f2;
+}
+.strap.menu > :not(.collapse):not(.menu-dropdown):not(.spacer):not(div):active, .strap.menu > :not(.collapse):not(.menu-dropdown):not(.spacer):not(div).active {
+  background-color: #e6e6e6;
+}
+@media only screen and (max-width: 767px) {
+  .strap.menu:not(.mobile-full):not(.wrapper) > :not(.mobile-shown):not(.mobile-button):not(.brand):not(.spacer) {
+    display: none;
+  }
+  .strap.menu:not(.mobile-full):not(.wrapper) > .mobile-button {
+    display: block;
+  }
+  .strap.menu.wrapper > .mobile-hidden {
+    display: none;
+  }
+}
+.strap.menu.left {
+  border-width: 0 1px 0 0;
+  border-radius: 0;
+  flex: 1;
+  max-width: 20%;
+  flex-direction: column;
+}
+.strap.menu.left > .brand {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 1.2rem 4rem 1.2rem;
+}
+.strap.menu.left > .spacer {
+  min-height: 0.25rem;
+}
+.strap.menu.left > :not(:first-child) {
+  border-top: 1px solid #ced4da;
+}
+.strap.menu.left > :not(.spacer) ~ :last-child {
+  border-bottom: 1px solid #ced4da;
+}
+.strap.menu.left > .menu.bottom > * {
+  border-top: 1px solid #ced4da;
+}
+@media only screen and (max-width: 767px) {
+  .strap.menu.left:not(.mobile-shown) {
+    display: none;
+  }
+}
+
+/* Sub menus */
+.strap.sub-menu {
+  cursor: pointer;
+  user-select: none;
+}
+.strap.sub-menu:not(.full-width) {
+  position: relative;
+}
+.strap.sub-menu > .label > .strap.icon {
+  margin-left: 1rem;
+}
+.strap.sub-menu > .sub-menu {
+  cursor: initial;
+  left: 0;
+  top: 100%;
+  font-size: 1rem;
+  color: #252627;
+  max-height: 100vh;
+  z-index: 11;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ced4da;
+  transition: max-height 0.2s ease-in, max-width 0.2s, border-color 0.2s, opacity 0.2s;
+}
+.strap.sub-menu > .sub-menu:not(.full-width) {
+  min-width: 200px;
+}
+.strap.sub-menu > .sub-menu.full-width {
+  right: 0;
+}
+.strap.sub-menu:not(.show):not(.hoverable) > .sub-menu, .strap.sub-menu.hoverable:not(:hover) > .sub-menu {
+  max-height: 0px;
+  opacity: 0;
+  border-color: rgba(206, 212, 218, 0);
+  border: none;
+  transition: max-height 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow: hidden;
+}
+
+.strap.sub-menu:not(.full-width) > .sub-menu > *,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > * {
+  display: block;
+  padding: 0.25rem 1rem;
+  margin: 0;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):hover,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):hover {
+  background-color: #f2f2f2;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):active, .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):focus, .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header).active,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):active,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header):focus,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > :not(.header).active {
+  background-color: #e6e6e6;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.link,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.link {
+  color: inherit;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu {
+  position: relative;
+  cursor: pointer;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu > .label,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu > .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu > .sub-menu,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu > .sub-menu {
+  left: 100%;
+  top: -1px;
+  max-width: 100vw;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:hover,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:hover {
+  background-color: #e6e6e6;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:hover > .sub-menu > *,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:hover > .sub-menu > * {
+  min-width: 200px;
+}
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:not(:hover) > .sub-menu, .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.show):not(.hoverable) > .sub-menu,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu.hoverable:not(:hover) > .sub-menu,
+.strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.full-width) > .sub-menu > .strap.sub-menu:not(.show):not(.hoverable) > .sub-menu {
+  max-width: 0;
+  opacity: 0;
+  border-color: rgba(206, 212, 218, 0);
+  transition: max-width 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow: hidden;
+  margin-left: 1px;
+}
+
+/* Mobile menu */
+.strap.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
+.strap.mobile-menu > .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.strap.mobile-menu:not(.show) {
+  display: none;
+}
+.strap.mobile-menu > .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  min-width: 250px;
+  width: 60%;
+  max-width: 400px;
+  background-color: white;
+}
+
+.strap.progress {
+  position: relative;
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+.strap.progress > .bar {
+  position: relative;
+  border-radius: 0.25rem;
+  background-color: #9e9e9e;
+  min-width: 2.5rem;
+  height: 1.75rem;
+}
+.strap.progress > .bar > .progress {
+  position: absolute;
+  top: 1px;
+  right: 0.5rem;
+  color: white;
+  white-space: nowrap;
+  line-height: 1.75rem;
+}
+.strap.progress:not(.show-progress) > .bar, .strap.progress.tiny > .bar, .strap.progress.attached > .bar {
+  min-width: 0.5rem;
+}
+.strap.progress:not(.show-progress) > .bar > .progress, .strap.progress.tiny > .bar > .progress, .strap.progress.attached > .bar > .progress {
+  display: none;
+}
+.strap.progress.tiny > .bar {
+  height: 0.5rem;
+}
+.strap.progress.small > .bar {
+  height: 1rem;
+}
+.strap.progress.small > .bar > .progress {
+  line-height: 1rem;
+}
+.strap.progress.large > .bar {
+  height: 2.5rem;
+}
+.strap.progress.large > .bar > .progress {
+  line-height: 2.5rem;
+}
+.strap.progress.huge > .bar {
+  height: 3.5rem;
+}
+.strap.progress.huge > .bar > .progress {
+  line-height: 3.5rem;
+}
+.strap.progress.attached {
+  margin: 0;
+}
+.strap.progress.attached > .bar {
+  height: 0.15rem;
+}
+.strap.progress.active:not(.striped) > .bar::after {
+  content: "";
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 3px;
+  animation: progress-glow-active 2s ease-out infinite;
+}
+.strap.progress.active.reverse:not(.striped) > .bar::after {
+  left: auto;
+  animation: progress-glow-active-reverse 2s ease-out infinite;
+}
+.strap.progress.striped > .bar {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.125) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.125) 50%, rgba(255, 255, 255, 0.125) 75%, transparent 75%, transparent);
+  background-size: 35px 35px;
+}
+.strap.progress.striped.active > .bar {
+  animation: progress-striped-active 2s linear infinite;
+}
+.strap.progress.striped.active.reverse > .bar {
+  animation: progress-striped-active-reverse 2s linear infinite;
+}
+.strap.progress.adaptive > .bar[data-progress^="0"] {
+  background-color: #de1b0c;
+}
+.strap.progress.adaptive > .bar[data-progress^="1"]:not([data-progress="100"]) {
+  background-color: #f44336;
+}
+.strap.progress.adaptive > .bar[data-progress^="2"] {
+  background-color: #f66c26;
+}
+.strap.progress.adaptive > .bar[data-progress^="3"] {
+  background-color: #f89416;
+}
+.strap.progress.adaptive > .bar[data-progress^="4"] {
+  background-color: #fba610;
+}
+.strap.progress.adaptive > .bar[data-progress^="5"] {
+  background-color: #fdb40c;
+}
+.strap.progress.adaptive > .bar[data-progress^="6"] {
+  background-color: #ffc107;
+}
+.strap.progress.adaptive > .bar[data-progress^="7"] {
+  background-color: #d1c222;
+}
+.strap.progress.adaptive > .bar[data-progress^="8"] {
+  background-color: #aec236;
+}
+.strap.progress.adaptive > .bar[data-progress^="9"] {
+  background-color: #8bc34a;
+}
+.strap.progress.adaptive > .bar[data-progress="100"] {
+  background-color: #6a9a33;
+}
+
+/**
+* @stylesheet _inputs.scss Inputs (text fields)
+* @parent landing.forms
+*
+* These are the inputs (text fields, the same)
+*
+* @custom test.html
+*/
+.strap.input {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  /* Typed inputs */
+}
+.strap.input.disabled {
+  opacity: 0.6;
+}
+.strap.input.loading::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.strap.input.loading::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
+  border-style: solid;
+  border-width: 0.2em;
+  -webkit-box-shadow: 0 0 0 1px transparent;
+  box-shadow: 0 0 0 1px transparent;
+  visibility: visible;
+  z-index: 101;
+}
+.strap.input.valid > input {
+  border-color: #28a745;
+  color: #28a745;
+}
+.strap.input.valid > label > .placeholder-text {
+  color: #28a745;
+}
+.strap.input.invalid > input {
+  border-color: #db2828;
+  color: #db2828;
+}
+.strap.input.invalid > label > .placeholder-text {
+  color: #db2828;
+}
+.strap.input.frozen > input {
+  user-select: none;
+  -moz-user-select: none;
+  pointer-events: none;
+}
+.strap.input > label {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.5rem;
+  transform-origin: 0 0;
+  line-height: 1rem;
+  cursor: text;
+}
+.strap.input > label > .placeholder-text {
+  transition: all 0.1s;
+  color: #252627;
+  opacity: 0.4;
+}
+.strap.input > label > .required-star {
+  transition: all 0.1s;
+  color: #db2828;
+  opacity: 0.6;
+}
+.strap.input > input {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  width: 100%;
+  min-width: 13.5rem;
+  transition: all 0.1s;
+  padding: 0.9rem 0 0.1rem 0.5rem;
+  line-height: 1rem;
+  color: #252627;
+  border-bottom: 1px solid #ced4da;
+}
+.strap.input > input:focus {
+  border-color: #9b59b6;
+  outline: none;
+}
+.strap.input > input:focus + label > *, .strap.input > input:not(:placeholder-shown):focus + label > * {
+  opacity: 0.8;
+}
+.strap.input > input::placeholder {
+  opacity: 0;
+  color: transparent;
+}
+.strap.input > input:not(:placeholder-shown) + label {
+  transform: translate(-0.5rem, -1rem);
+  font-size: 0.9rem;
+}
+.strap.input > input:not(:placeholder-shown) + label > .placeholder-text {
+  opacity: 0.6;
+}
+.strap.input.length > input:focus {
+  border-color: #774a2d;
+}
+.strap.input.volume > input:focus {
+  border-color: #cd9c7d;
+}
+.strap.input.weight > input:focus {
+  border-color: #c87206;
+}
+.strap.input.currency > input:focus {
+  border-color: #ffc107;
+}
+.strap.input.percentage > input:focus {
+  border-color: #2196f3;
+}
+.strap.input.number > input:focus {
+  border-color: #f89416;
+}
+.strap.input.email > input:focus {
+  border-color: #606fc7;
+}
+.strap.input.secret > input:focus, .strap.input.password > input:focus {
+  border-color: #b61249;
+}
+
+.v-popover > .trigger {
+  display: block !important;
+}
+
+.strap.collapse > .collapser {
+  cursor: pointer;
+}
+.strap.collapse > .collapser > .strap.icon {
+  transition: transform 0.35s ease;
+}
+.strap.collapse > .collapser > .strap.icon + * {
+  margin-left: 0.25rem;
+}
+.strap.collapse.show > .collapser > .strap.icon {
+  transform: rotate(90deg);
+  width: 1.25rem;
+}
+.strap.collapse > .collapsee {
+  max-height: 500px;
+  transition: max-height 0.5s, margin-top 0.35s ease;
+  overflow: hidden;
+}
+.strap.collapse > .collapsee > :first-child {
+  margin-top: 0.5rem;
+}
+.strap.collapse > .collapsee > * {
+  display: block;
+  padding-left: 1.5rem;
+}
+.strap.collapse:not(.show) > .collapsee {
+  max-height: 0px;
+}
+.strap.collapse.item.show > .collapser {
+  font-weight: bold;
+}
+.strap.collapse.spaced > .collapsee {
+  margin-top: 1rem;
+}
+
+.strap.dropdown {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  min-height: 1rem;
+  line-height: 1rem;
+  border-bottom: 1px solid #ced4da;
+  min-width: 13.5rem;
+  padding: 0.9rem 1.625rem 0.1rem 0.5rem;
+  transition: border-color 0.1s linear, background-color 0.1s linear, color 0.1s linear;
+}
+.strap.dropdown.white {
+  border-color: white;
+}
+.strap.dropdown.white > .icon {
+  color: white;
+}
+.strap.dropdown.white > .placeholder > .placeholder-text {
+  color: white;
+}
+.strap.dropdown.valid {
+  border-color: #28a745;
+}
+.strap.dropdown.valid > .value, .strap.dropdown.valid > .icon, .strap.dropdown.valid > .placeholder > .placeholder-text {
+  color: #28a745;
+}
+.strap.dropdown.invalid {
+  border-color: #db2828;
+}
+.strap.dropdown.invalid > .value, .strap.dropdown.invalid > .icon, .strap.dropdown.invalid > .placeholder > .placeholder-text {
+  color: #db2828;
+}
+.strap.dropdown > .icon {
+  position: absolute;
+  width: 0.625rem;
+  top: 0.625rem;
+  right: 0.5rem;
+  color: #252627;
+  opacity: 0.6;
+  transition: opacity 0.1s linear;
+}
+.strap.dropdown > .placeholder {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.5rem;
+  transform-origin: 0 0;
+  line-height: 1rem;
+  -moz-user-select: none;
+  user-select: none;
+}
+.strap.dropdown > .placeholder > .placeholder-text {
+  transition: all 0.1s;
+  color: #252627;
+  opacity: 0.4;
+}
+.strap.dropdown > .placeholder > .required-star {
+  transition: all 0.1s;
+  color: #db2828;
+  opacity: 0.6;
+}
+.strap.dropdown.show > .placeholder > *, .strap.dropdown.show > .value:not(:empty) + .placeholder, .strap.dropdown.show > .icon, .strap.dropdown:hover > .icon {
+  opacity: 0.8;
+}
+.strap.dropdown.show:not(.valid):not(.invalid) {
+  border-color: #8594a3;
+}
+.strap.dropdown > .value {
+  min-height: 1rem;
+  -moz-user-select: none;
+  user-select: none;
+  opacity: 1;
+  transition: opacity 0.35s;
+}
+.strap.dropdown > .value:empty {
+  opacity: 0;
+}
+.strap.dropdown > .value:not(:empty) + .placeholder {
+  transform: translate(-0.5rem, -1rem);
+  font-size: 0.9rem;
+}
+.strap.dropdown > .value:not(:empty) + .placeholder > .placeholder-text {
+  opacity: 0.6;
+}
+.strap.dropdown > .menu {
+  cursor: auto;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  min-width: 100%;
+  width: 100%;
+  background-color: white;
+  color: #252627;
+  z-index: 10;
+  max-height: 200px;
+  border: 1px solid #ced4da;
+  border-top: 0;
+  overflow-y: auto;
+  transition: max-height 0.2s ease-in, border-color 0.2s;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.strap.dropdown > .menu > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.strap.dropdown > .menu > ul > li {
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+.strap.dropdown > .menu > ul > li:not(:first-child) {
+  border-top: 1px solid rgba(206, 212, 218, 0.5);
+}
+.strap.dropdown > .menu > ul > li:hover {
+  background-color: #f2f2f2;
+}
+.strap.dropdown > .menu > ul > li.selected {
+  background-color: #e6e6e6;
+}
+.strap.dropdown:not(.show) > .menu {
+  max-height: 0px;
+  border-color: rgba(206, 212, 218, 0);
+  border-bottom-width: 0;
+  transition: max-height 0.2s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  overflow: hidden;
+}
+
+.strap.checkbox {
+  display: flex;
+  white-space: nowrap;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.strap.checkbox.disabled {
+  opacity: 0.6;
+}
+.strap.checkbox:not(.disabled) {
+  cursor: pointer;
+}
+.strap.checkbox:not(.disabled) > label {
+  cursor: pointer;
+}
+.strap.checkbox > label > .required-star {
+  color: #db2828;
+  opacity: 0.8;
+}
+.strap.checkbox.valid > .box-wrapper > .radio-box, .strap.checkbox.valid > .box-wrapper > .toggle-box, .strap.checkbox.valid > .box-wrapper > .box {
+  border-color: #86e29b;
+}
+.strap.checkbox.valid > .box-wrapper > .radio-box > *, .strap.checkbox.valid > .box-wrapper > .toggle-box > * {
+  background-color: #28a745;
+}
+.strap.checkbox.valid > .box-wrapper > .box > * {
+  color: #28a745;
+}
+.strap.checkbox.valid > label > .placeholder-text {
+  color: #28a745;
+}
+.strap.checkbox.invalid > .box-wrapper > .radio-box, .strap.checkbox.invalid > .box-wrapper > .toggle-box, .strap.checkbox.invalid > .box-wrapper > .box {
+  border-color: #f1abab;
+}
+.strap.checkbox.invalid > .box-wrapper > .radio-box > *, .strap.checkbox.invalid > .box-wrapper > .toggle-box > * {
+  background-color: #db2828;
+}
+.strap.checkbox.invalid > .box-wrapper > .box > * {
+  color: #db2828;
+}
+.strap.checkbox.invalid > label > .placeholder-text {
+  color: #db2828;
+}
+.strap.checkbox > input {
+  display: none;
+}
+.strap.checkbox.text-right > label {
+  text-align: right;
+}
+.strap.checkbox.box-left > label {
+  margin-left: 0.5rem;
+  order: 1;
+}
+.strap.checkbox.box-left > .box-wrapper {
+  order: 0;
+}
+.strap.checkbox:not(.box-left) > label {
+  margin-right: 0.5rem;
+}
+.strap.checkbox:not(.centered) > label {
+  flex: 1;
+}
+.strap.checkbox.centered {
+  justify-content: center;
+}
+.strap.checkbox > .box-wrapper > * {
+  display: inline-block;
+  border: 1px solid #ced4da;
+  width: calc(1.25rem + 2px);
+  height: calc(1.25rem + 2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.strap.checkbox > .box-wrapper > .box {
+  border-radius: 0.25rem;
+}
+.strap.checkbox > .box-wrapper > .box > * {
+  transition: opacity 0.075s linear;
+}
+.strap.checkbox > .box-wrapper > .radio-box {
+  border-radius: 50%;
+}
+.strap.checkbox > .box-wrapper > .radio-box > div {
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: #57595b;
+  border-radius: 50%;
+  transition: opacity 0.075s linear;
+}
+.strap.checkbox > .box-wrapper > .toggle-box {
+  border-radius: 0.625rem;
+  width: calc(2.5rem + 2px);
+  justify-content: right;
+}
+.strap.checkbox > .box-wrapper > .toggle-box > div {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #57595b;
+  border-radius: 50%;
+  transition: transform 0.075s linear;
+}
+.strap.checkbox > input:not(:checked) ~ .box-wrapper > .box > *, .strap.checkbox > input:not(:checked) ~ .box-wrapper > .radio-box > div {
+  opacity: 0;
+}
+.strap.checkbox > input:not(:checked) ~ .box-wrapper > .toggle-box > div {
+  transform: translateX(-100%);
+}
+
+.strap.grid-layout-item {
+  display: flex;
+  flex-direction: column;
+}
+.strap.grid-layout-item:hover {
+  z-index: 11;
+}
+.strap.grid-layout-item.edit-mode {
+  z-index: 12;
+}
+.editable > .strap.grid-layout-item {
+  cursor: grab;
+  padding-left: 0.25rem;
+  padding-right: 1.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+.editable > .strap.grid-layout-item:not(.edit-mode) {
+  background-color: #e9e9e9;
+}
+.editable > .strap.grid-layout-item:hover {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+:not(.editable) > .strap.grid-layout-item > .grid-box-wrapper > .grid-box-edit {
+  display: none;
+}
+.strap.grid-layout-item > .grid-box-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.strap.grid-layout-item > .grid-box-wrapper.align-top {
+  justify-content: start;
+}
+.strap.grid-layout-item > .grid-box-wrapper.align-bottom {
+  justify-content: end;
+}
+.strap.grid-layout-item > .grid-box-wrapper.show-overflow {
+  overflow: visible;
+}
+.strap.grid-layout-item > .grid-box-wrapper.auto-overflow {
+  overflow: auto;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .grid-box-element-wrapper > * {
+  margin: 0 !important;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .full-height {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .full-height > * {
+  flex: 1;
+}
+.strap.grid-layout-item > .grid-box-wrapper:not(.preview) > .grid-box-description {
+  display: none;
+}
+.strap.grid-layout-item > .grid-box-wrapper:not(.preview) > .grid-box-identifier {
+  font-style: italic;
+  position: absolute;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
+  display: none;
+  user-select: none;
+  -moz-user-select: none;
+  z-index: 10;
+  transform: none;
+  padding: 0.25rem;
+  border: 1px solid #ced4da;
+  background-color: white;
+  pointer-events: none;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.strap.grid-layout-item > .grid-box-wrapper:not(.preview) > .grid-box-identifier > .strap.button {
+  display: none;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .grid-box-controls {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .grid-box-controls.reduced {
+  right: 15px;
+  top: -3px;
+}
+.strap.grid-layout-item > .grid-box-wrapper > .grid-box-edit {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.editable > .strap.grid-layout-item:hover > .grid-box-wrapper > .grid-box-identifier, .editable > .strap.grid-layout-item.edit-mode > .grid-box-wrapper > .grid-box-identifier, .strap.grid-layout-item.preview > .grid-box-wrapper > .grid-box-identifier, .editable > .strap.grid-layout-item > .grid-box-wrapper > .grid-box-controls {
+  display: block;
+}
+.editable > .strap.grid-layout-item:not(.edit-mode) > .grid-box-wrapper > .grid-box-element-wrapper * {
+  user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.grid-box-wrapper.preview {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: white;
+  margin: 0.5rem;
+}
+.grid-box-wrapper.preview > .grid-box-identifier, .grid-box-wrapper.preview > .grid-box-description {
+  padding: 0.25rem 0.5rem;
+}
+.grid-box-wrapper.preview > .grid-box-description {
+  border-top: 1px solid #ced4da;
+}
+.grid-box-wrapper.preview > .grid-box-identifier {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+.grid-box-wrapper.preview > .grid-box-identifier > .strap.button {
+  margin: 0;
+}
+.grid-box-wrapper.preview > .grid-box-controls {
+  display: none;
+}
+.grid-box-wrapper.preview > .grid-box-element-wrapper {
+  border-top: 1px solid #ced4da;
+  padding: 0.5rem;
+}
+.grid-box-wrapper.preview > .grid-box-element-wrapper > * {
+  margin: 0 !important;
+}
+
+.strap.divider {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.strap.divider::before, .strap.divider::after {
+  content: "";
+  height: 1px;
+  background: #ced4da;
+}
+.strap.divider::before {
+  flex-grow: 8;
+}
+.strap.divider::after {
+  flex-grow: 64;
+}
+.strap.divider:not(.no-text):before {
+  margin-right: 0.5rem;
+}
+.strap.divider:not(.no-text):after {
+  margin-left: 0.5rem;
+}
+.strap.divider.center::after {
+  flex-grow: 8;
+}
+.strap.divider.italic {
+  font-style: italic;
+}
+.strap.divider.bold {
+  font-weight: bold;
+}
+
+/* Window manager specific part */
+.strap.window-tabs {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1b2025;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 100;
+}
+.strap.window-tabs > div {
+  display: inline-block;
+  background-color: #36404a;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0.5rem 0.5rem 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 100px;
+  width: 12.5%;
+  max-width: 180px;
+  flex: 1 1 100px;
+  user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+}
+.strap.window-tabs > div:not(:first-child) {
+  border-left: 1px solid #617385;
+}
+.strap.window-tabs > div:hover, .strap.window-tabs > div.focus {
+  background-color: #4c5a67;
+}
+.strap.window-tabs > div > .strap.icon {
+  margin-right: 0.25rem;
+}
+
+/* Actual windows */
+.strap.window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 2px 4px 0 rgba(54, 64, 74, 0.2), 0 2px 10px 0 #36404a;
+  /* Menu and tool bars */
+  /* Actual window content */
+}
+.strap.window.fullscreen {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.strap.window:not(.fullscreen) {
+  border: 1px solid #36404a;
+}
+.strap.window.dragging > .title-bar {
+  cursor: move;
+}
+.strap.window > .title-bar {
+  user-select: none;
+  -moz-user-select: none;
+  width: 100%;
+  background-color: #36404a;
+  color: white;
+  padding: 0.25rem 5rem 0.25rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.strap.window > .title-bar > .strap.icon {
+  margin-right: 0.5rem;
+}
+.strap.window > .title-bar > .handle-icons {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+}
+.strap.window > .title-bar > .handle-icons > .strap.icon {
+  margin-left: 5px;
+  color: #d1d1d1;
+}
+.strap.window > .title-bar > .handle-icons > .close:hover {
+  color: #f44336;
+}
+.strap.window > .handlers > .resize-handler {
+  position: absolute;
+}
+.strap.window > .handlers > .resize-handler.top, .strap.window > .handlers > .resize-handler.bottom {
+  width: 100%;
+  height: 4px;
+}
+.strap.window > .handlers > .resize-handler.left, .strap.window > .handlers > .resize-handler.right {
+  width: 4px;
+  height: 100%;
+}
+.strap.window > .handlers > .resize-handler.bottom-left, .strap.window > .handlers > .resize-handler.bottom-right, .strap.window > .handlers > .resize-handler.top-left, .strap.window > .handlers > .resize-handler.top-right {
+  width: 4px;
+  height: 4px;
+}
+.strap.window > .handlers > .resize-handler.top {
+  top: -2px;
+  cursor: n-resize;
+}
+.strap.window > .handlers > .resize-handler.left {
+  left: -2px;
+  cursor: w-resize;
+}
+.strap.window > .handlers > .resize-handler.right {
+  right: -2px;
+  cursor: e-resize;
+}
+.strap.window > .handlers > .resize-handler.bottom {
+  bottom: -2px;
+  cursor: s-resize;
+}
+.strap.window > .handlers > .resize-handler.bottom-left, .strap.window > .handlers > .resize-handler.bottom-right {
+  bottom: -2px;
+}
+.strap.window > .handlers > .resize-handler.top-left, .strap.window > .handlers > .resize-handler.top-right {
+  top: -2px;
+}
+.strap.window > .handlers > .resize-handler.bottom-left, .strap.window > .handlers > .resize-handler.top-left {
+  left: -2px;
+}
+.strap.window > .handlers > .resize-handler.bottom-right, .strap.window > .handlers > .resize-handler.top-right {
+  right: -2px;
+}
+.strap.window > .handlers > .resize-handler.bottom-left {
+  cursor: sw-resize;
+}
+.strap.window > .handlers > .resize-handler.bottom-right {
+  cursor: se-resize;
+}
+.strap.window > .handlers > .resize-handler.top-left {
+  cursor: nw-resize;
+}
+.strap.window > .handlers > .resize-handler.top-right {
+  cursor: ne-resize;
+}
+.strap.window > .bars > * {
+  background-color: #f0f0f0;
+}
+.strap.window > .content {
+  position: relative;
+  overflow: auto;
+  flex: 1;
+  display: flex;
+}
+.strap.window > .content > .full-content {
+  flex: 1;
+}
+
+.strap.flex-grid {
+  display: flex;
+  margin: 0.5rem;
+  flex-direction: column;
+  flex: 1;
+}
+.strap.flex-grid > .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.strap.flex-grid > .row > .size-1 {
+  flex: 0 0 6.25%;
+  max-width: 6.25%;
+}
+.strap.flex-grid > .row > .size-2 {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+.strap.flex-grid > .row > .size-3 {
+  flex: 0 0 18.75%;
+  max-width: 18.75%;
+}
+.strap.flex-grid > .row > .size-4 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.strap.flex-grid > .row > .size-5 {
+  flex: 0 0 31.25%;
+  max-width: 31.25%;
+}
+.strap.flex-grid > .row > .size-6 {
+  flex: 0 0 37.5%;
+  max-width: 37.5%;
+}
+.strap.flex-grid > .row > .size-7 {
+  flex: 0 0 43.75%;
+  max-width: 43.75%;
+}
+.strap.flex-grid > .row > .size-8 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.strap.flex-grid > .row > .size-9 {
+  flex: 0 0 56.25%;
+  max-width: 56.25%;
+}
+.strap.flex-grid > .row > .size-10 {
+  flex: 0 0 62.5%;
+  max-width: 62.5%;
+}
+.strap.flex-grid > .row > .size-11 {
+  flex: 0 0 68.75%;
+  max-width: 68.75%;
+}
+.strap.flex-grid > .row > .size-12 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+.strap.flex-grid > .row > .size-13 {
+  flex: 0 0 81.25%;
+  max-width: 81.25%;
+}
+.strap.flex-grid > .row > .size-14 {
+  flex: 0 0 87.5%;
+  max-width: 87.5%;
+}
+.strap.flex-grid > .row > .size-15 {
+  flex: 0 0 93.75%;
+  max-width: 93.75%;
+}
+.strap.flex-grid > .row > .size-16 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.strap.flex-grid > .row.center {
+  text-align: center;
+}
+.strap.flex-grid.wrapping > .row:not(.fitted) > *, .strap.flex-grid > .row.wrapping:not(.fitted) > * {
+  min-width: 13.5rem;
+}
+.strap.flex-grid > .row > * {
+  flex: 1 1 13.5rem;
+  margin: 0.25rem 0.5rem;
+}
+.strap.flex-grid > .row.fitted > * {
+  flex: 1;
+}
+.strap.flex-grid.size-2 > .row > *, .strap.flex-grid > .row.size-2 > * {
+  flex: 1 1 27rem;
+}
+.strap.flex-grid.size-3 > .row > *, .strap.flex-grid > .row.size-3 > * {
+  flex: 1 1 40.5rem;
+}
+.strap.flex-grid.size-4 > .row > *, .strap.flex-grid > .row.size-4 > * {
+  flex: 1 1 54rem;
+}
+
+.strap.grid {
+  width: 100%;
+}
+.strap.grid > .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, auto));
+}
+.strap.grid > .row > * {
+  grid-column: auto;
+}
+.strap.grid > .row > .size-1 {
+  grid-column: span 1;
+}
+.strap.grid > .row > .size-2 {
+  grid-column: span 2;
+}
+.strap.grid > .row > .size-3 {
+  grid-column: span 3;
+}
+.strap.grid > .row > .size-4 {
+  grid-column: span 4;
+}
+.strap.grid > .row > .size-5 {
+  grid-column: span 5;
+}
+.strap.grid > .row > .size-6 {
+  grid-column: span 6;
+}
+.strap.grid > .row > .size-7 {
+  grid-column: span 7;
+}
+.strap.grid > .row > .size-8 {
+  grid-column: span 8;
+}
+.strap.grid > .row > .size-9 {
+  grid-column: span 9;
+}
+.strap.grid > .row > .size-10 {
+  grid-column: span 10;
+}
+.strap.grid > .row > .size-11 {
+  grid-column: span 11;
+}
+.strap.grid > .row > .size-12 {
+  grid-column: span 12;
+}
+.strap.grid > .row > .size-13 {
+  grid-column: span 13;
+}
+.strap.grid > .row > .size-14 {
+  grid-column: span 14;
+}
+.strap.grid > .row > .size-15 {
+  grid-column: span 15;
+}
+.strap.grid > .row > .size-16 {
+  grid-column: span 16;
+}
+
+.strap.visual-flow .strap.flow-container {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+}
+.strap.visual-flow .strap.flow-container.linking {
+  cursor: grabbing;
+}
+.strap.visual-flow .strap.flow-container.linking > .strap.flow-step > .ports > .outputs > .output > .slot:hover {
+  box-shadow: none;
+}
+.strap.visual-flow .strap.flow-container.linking > .strap.flow-step > .ports > .outputs > .output > .slot:hover:not(.linking) {
+  cursor: no-drop;
+}
+.strap.visual-flow .strap.flow-container.linking > .strap.flow-step > .ports > .outputs > .output > .slot:hover.linking {
+  cursor: grabbing;
+}
+.strap.visual-flow .strap.flow-container.linking > .strap.flow-step > .ports > .inputs > .input > .slot:hover {
+  cursor: crosshair;
+}
+.strap.visual-flow .strap.flow-container:not(.linking) > .strap.flow-step > .ports > .inputs > .input > .slot:not(.linked):hover {
+  box-shadow: none;
+}
+.strap.visual-flow .strap.flow-container > .menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 15;
+}
+
+.strap.flow-step {
+  position: absolute;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: white;
+}
+.strap.flow-step > :not(.modal) > * {
+  user-select: none;
+  -moz-user-select: none;
+}
+.strap.flow-step > .footer {
+  border-top: 1px solid #ced4da;
+  padding-right: 0.5rem;
+}
+.strap.flow-step > .footer > ul {
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+}
+.strap.flow-step > .footer > ul > li {
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  list-style-position: inside;
+}
+.strap.flow-step > .step-type {
+  border-bottom: 1px solid #ced4da;
+  cursor: move;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.25rem;
+}
+.strap.flow-step > .step-type > .icons {
+  display: flex;
+}
+.strap.flow-step > .ports {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.strap.flow-step > .ports > .inputs, .strap.flow-step > .ports.outputs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.strap.flow-step > .ports > .inputs > .input, .strap.flow-step > .ports > .outputs > .output {
+  display: flex;
+  align-items: center;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot, .strap.flow-step > .ports > .outputs > .output > .slot {
+  border-radius: 500rem;
+  border: 1px solid #ced4da;
+  background-color: white;
+  width: 0.75rem;
+  height: 0.75rem;
+  line-height: 1.5rem;
+  cursor: grab;
+}
+@media (pointer: fine) {
+  .strap.flow-step > .ports > .inputs > .input > .slot, .strap.flow-step > .ports > .outputs > .output > .slot {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+@media (pointer: coarse) {
+  .strap.flow-step > .ports > .inputs > .input > .slot, .strap.flow-step > .ports > .outputs > .output > .slot {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.text, .strap.flow-step > .ports > .outputs > .output > .slot.text {
+  border: 1px solid #9b59b6;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.text.linked, .strap.flow-step > .ports > .inputs > .input > .slot.text.linking, .strap.flow-step > .ports > .outputs > .output > .slot.text.linked, .strap.flow-step > .ports > .outputs > .output > .slot.text.linking {
+  background-color: #9b59b6;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.text:hover, .strap.flow-step > .ports > .outputs > .output > .slot.text:hover {
+  box-shadow: 0 0 0 3px rgba(155, 89, 182, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.number, .strap.flow-step > .ports > .outputs > .output > .slot.number {
+  border: 1px solid #f89416;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.number.linked, .strap.flow-step > .ports > .inputs > .input > .slot.number.linking, .strap.flow-step > .ports > .outputs > .output > .slot.number.linked, .strap.flow-step > .ports > .outputs > .output > .slot.number.linking {
+  background-color: #f89416;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.number:hover, .strap.flow-step > .ports > .outputs > .output > .slot.number:hover {
+  box-shadow: 0 0 0 3px rgba(248, 148, 22, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.currency, .strap.flow-step > .ports > .outputs > .output > .slot.currency {
+  border: 1px solid #ffc107;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.currency.linked, .strap.flow-step > .ports > .inputs > .input > .slot.currency.linking, .strap.flow-step > .ports > .outputs > .output > .slot.currency.linked, .strap.flow-step > .ports > .outputs > .output > .slot.currency.linking {
+  background-color: #ffc107;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.currency:hover, .strap.flow-step > .ports > .outputs > .output > .slot.currency:hover {
+  box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.weight, .strap.flow-step > .ports > .outputs > .output > .slot.weight {
+  border: 1px solid #c87206;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.weight.linked, .strap.flow-step > .ports > .inputs > .input > .slot.weight.linking, .strap.flow-step > .ports > .outputs > .output > .slot.weight.linked, .strap.flow-step > .ports > .outputs > .output > .slot.weight.linking {
+  background-color: #c87206;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.weight:hover, .strap.flow-step > .ports > .outputs > .output > .slot.weight:hover {
+  box-shadow: 0 0 0 3px rgba(200, 114, 6, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.volume, .strap.flow-step > .ports > .outputs > .output > .slot.volume {
+  border: 1px solid #cd9c7d;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.volume.linked, .strap.flow-step > .ports > .inputs > .input > .slot.volume.linking, .strap.flow-step > .ports > .outputs > .output > .slot.volume.linked, .strap.flow-step > .ports > .outputs > .output > .slot.volume.linking {
+  background-color: #cd9c7d;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.volume:hover, .strap.flow-step > .ports > .outputs > .output > .slot.volume:hover {
+  box-shadow: 0 0 0 3px rgba(205, 156, 125, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.length, .strap.flow-step > .ports > .outputs > .output > .slot.length {
+  border: 1px solid #774a2d;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.length.linked, .strap.flow-step > .ports > .inputs > .input > .slot.length.linking, .strap.flow-step > .ports > .outputs > .output > .slot.length.linked, .strap.flow-step > .ports > .outputs > .output > .slot.length.linking {
+  background-color: #774a2d;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.length:hover, .strap.flow-step > .ports > .outputs > .output > .slot.length:hover {
+  box-shadow: 0 0 0 3px rgba(119, 74, 45, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.percentage, .strap.flow-step > .ports > .outputs > .output > .slot.percentage {
+  border: 1px solid #2196f3;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.percentage.linked, .strap.flow-step > .ports > .inputs > .input > .slot.percentage.linking, .strap.flow-step > .ports > .outputs > .output > .slot.percentage.linked, .strap.flow-step > .ports > .outputs > .output > .slot.percentage.linking {
+  background-color: #2196f3;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.percentage:hover, .strap.flow-step > .ports > .outputs > .output > .slot.percentage:hover {
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.email, .strap.flow-step > .ports > .outputs > .output > .slot.email {
+  border: 1px solid #606fc7;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.email.linked, .strap.flow-step > .ports > .inputs > .input > .slot.email.linking, .strap.flow-step > .ports > .outputs > .output > .slot.email.linked, .strap.flow-step > .ports > .outputs > .output > .slot.email.linking {
+  background-color: #606fc7;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.email:hover, .strap.flow-step > .ports > .outputs > .output > .slot.email:hover {
+  box-shadow: 0 0 0 3px rgba(96, 111, 199, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.any, .strap.flow-step > .ports > .outputs > .output > .slot.any {
+  border: 1px solid #009688;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.any.linked, .strap.flow-step > .ports > .inputs > .input > .slot.any.linking, .strap.flow-step > .ports > .outputs > .output > .slot.any.linked, .strap.flow-step > .ports > .outputs > .output > .slot.any.linking {
+  background-color: #009688;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.any:hover, .strap.flow-step > .ports > .outputs > .output > .slot.any:hover {
+  box-shadow: 0 0 0 3px rgba(0, 150, 136, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.boolean, .strap.flow-step > .ports > .outputs > .output > .slot.boolean {
+  border: 1px solid #e91e63;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.boolean.linked, .strap.flow-step > .ports > .inputs > .input > .slot.boolean.linking, .strap.flow-step > .ports > .outputs > .output > .slot.boolean.linked, .strap.flow-step > .ports > .outputs > .output > .slot.boolean.linking {
+  background-color: #e91e63;
+}
+.strap.flow-step > .ports > .inputs > .input > .slot.boolean:hover, .strap.flow-step > .ports > .outputs > .output > .slot.boolean:hover {
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.5);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot {
+  margin-right: 0.5rem;
+  margin-left: calc(-0.375rem - 1px);
+}
+.strap.flow-step > .ports > .inputs > .input > .slot:not(.linked) {
+  cursor: default;
+}
+@media (pointer: fine) {
+  .strap.flow-step > .ports > .inputs > .input > .slot {
+    margin-left: calc(-0.375rem - 1px);
+  }
+}
+@media (pointer: coarse) {
+  .strap.flow-step > .ports > .inputs > .input > .slot {
+    margin-left: calc(-0.75rem - 1px);
+  }
+}
+.strap.flow-step > .ports > .outputs > .output {
+  justify-content: end;
+}
+.strap.flow-step > .ports > .outputs > .output > .slot {
+  margin-left: 0.5rem;
+  margin-right: -0.375rem;
+}
+@media (pointer: fine) {
+  .strap.flow-step > .ports > .outputs > .output > .slot {
+    margin-right: -0.375rem;
+  }
+}
+@media (pointer: coarse) {
+  .strap.flow-step > .ports > .outputs > .output > .slot {
+    margin-right: -0.75rem;
+  }
+}
+
+.strap.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.strap.modal.dark-background {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.strap.modal.light-background {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.strap.modal > .content {
+  position: relative;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  width: 500px;
+  margin: 5rem auto;
+}
+.strap.modal > .content > .header {
+  border-bottom: 1px solid #ced4da;
+  padding-bottom: 1rem;
+}
+.strap.modal > .content > .content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.strap.modal > .content > .footer {
+  border-top: 1px solid #ced4da;
+  padding-top: 1rem;
+  text-align: end;
+}
+.strap.modal > .content > .close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.25rem;
+  line-height: 1rem;
+}
+.strap.modal > .content > .close-icon > * {
+  width: 1rem;
+  height: 1rem;
+}
+.strap.modal.large > .content {
+  width: 800px;
+}
+@media only screen and (max-width: 828px) {
+  .strap.modal.large > .content {
+    margin: 1rem;
+    width: calc(100% - 1rem * 2);
+  }
+  .strap.modal.large > .content > .footer {
+    text-align: center;
+  }
+}
+.strap.modal.small > .content {
+  width: 300px;
+}
+@media only screen and (max-width: 328px) {
+  .strap.modal.small > .content {
+    margin: 1rem;
+    width: calc(100% - 1rem * 2);
+  }
+  .strap.modal.small > .content > .footer {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 528px) {
+  .strap.modal:not(.large):not(.small) > .content {
+    margin: 1rem;
+    width: calc(100% - 1rem * 2);
+  }
+  .strap.modal:not(.large):not(.small) > .content > .footer {
+    text-align: center;
+  }
+}
+
+.strap.datetime-picker {
+  position: relative;
+}
+.strap.datetime-picker > .picker {
+  position: absolute;
+  top: 100%;
+  width: 300px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: white;
+  z-index: 12;
+}
+.strap.datetime-picker > .picker > .picker-head {
+  display: flex;
+  padding: 0.75rem 1rem;
+  align-items: center;
+  line-height: 1.2rem;
+}
+.strap.datetime-picker > .picker > .picker-head > .picker-head-main {
+  flex: 1;
+  text-align: center;
+}
+.strap.datetime-picker > .picker > .picker-head > .picker-head-main > * {
+  font-size: 1.2rem;
+}
+.strap.datetime-picker > .picker > .picker-head > .picker-head-main > :first-child {
+  margin-right: 0.5rem;
+}
+.strap.datetime-picker > .picker > table {
+  width: calc(100% - 2rem);
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1rem;
+}
+.strap.datetime-picker > .picker > table th {
+  border-bottom: 1px solid #ced4da;
+}
+.strap.datetime-picker > .picker > table td {
+  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+.strap.datetime-picker > .picker > table td.previous-month, .strap.datetime-picker > .picker > table td.next-month {
+  opacity: 0.6;
+}
+.strap.datetime-picker > .picker > table td.today {
+  color: #41A317;
+}
+.strap.datetime-picker > .picker > table td.selected {
+  background-color: rgba(65, 163, 23, 0.2);
+}
+.strap.datetime-picker:not(.shown) > .picker {
+  display: none;
+}
+.strap.datetime-picker:not(.select-week) > .picker > table td:hover {
+  background-color: #f2f2f2;
+}
+.strap.datetime-picker.select-week > .picker > table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+.strap.alert {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  display: flex;
+}
+.strap.alert > .strap.icon {
+  margin-right: 1rem;
+  align-self: center;
+}
+.strap.alert > .content {
+  flex: 1;
+}
+.strap.alert.spaced {
+  margin: 1rem;
+}
+.strap.alert.positive {
+  background-color: rgba(196, 241, 206, 0.5);
+  border-color: rgba(20, 85, 35, 0.5);
+  color: #145523;
+}
+.strap.alert.negative {
+  background-color: rgba(248, 215, 215, 0.5);
+  border-color: rgba(134, 23, 23, 0.5);
+  color: #861717;
+}
+.strap.alert.warning {
+  background-color: rgba(254, 243, 209, 0.5);
+  border-color: rgba(129, 97, 2, 0.5);
+  color: #816102;
+}
+.strap.alert.info {
+  background-color: rgba(250, 254, 255, 0.5);
+  border-color: rgba(18, 141, 181, 0.5);
+  color: #128db5;
+}
+
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+  max-width: calc(100% - 10px);
+}
+.tooltip .tooltip-inner {
+  background: #36404a;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+.tooltip .tooltip-arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin: 0.25rem;
+  border-color: #36404a;
+  z-index: 1;
+}
+.tooltip[x-placement^=top] {
+  margin-bottom: 5px;
+}
+.tooltip[x-placement^=top] .tooltip-arrow {
+  border-width: 5px 5px 0 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tooltip[x-placement^=bottom] {
+  margin-top: 5px;
+}
+.tooltip[x-placement^=bottom] .tooltip-arrow {
+  border-width: 0 5px 5px 5px;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+  top: -5px;
+  left: calc(50% - 5px);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tooltip[x-placement^=right] {
+  margin-left: 5px;
+}
+.tooltip[x-placement^=right] .tooltip-arrow {
+  border-width: 5px 5px 5px 0;
+  border-left-color: transparent !important;
+  border-top-color: transparent !important;
+  border-bottom-color: transparent !important;
+  left: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.tooltip[x-placement^=left] {
+  margin-right: 5px;
+}
+.tooltip[x-placement^=left] .tooltip-arrow {
+  border-width: 5px 0 5px 5px;
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+  right: -5px;
+  top: calc(50% - 5px);
+  margin-left: 0;
+  margin-right: 0;
+}
+.tooltip.popover .popover-inner {
+  background: #36404a;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+.tooltip.popover .popover-arrow {
+  border-color: #36404a;
+}
+.tooltip[aria-hidden=true] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+.tooltip[aria-hidden=false] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.strap.notification-manager {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  min-width: 320px;
+  max-width: 480px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.strap.notification {
+  position: relative;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  background-color: #f0f0f0;
+}
+.strap.notification.timeout {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.strap.notification > .content {
+  flex: 1;
+  line-height: 1rem;
+}
+.strap.notification > .strap.icon:not(.close-icon) {
+  margin-right: 1rem;
+  align-self: center;
+}
+.strap.notification > .strap.icon.close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.strap.notification.success {
+  background-color: rgba(196, 241, 206, 0.5);
+  border-color: rgba(20, 85, 35, 0.5);
+  color: #145523;
+}
+.strap.notification.error {
+  background-color: rgba(248, 215, 215, 0.5);
+  border-color: rgba(134, 23, 23, 0.5);
+  color: #861717;
+}
+.strap.notification.warning {
+  background-color: rgba(254, 243, 209, 0.5);
+  border-color: rgba(129, 97, 2, 0.5);
+  color: #816102;
+}
+.strap.notification.info {
+  background-color: rgba(250, 254, 255, 0.5);
+  border-color: rgba(18, 141, 181, 0.5);
+  color: #128db5;
+}
+
+.strap.table {
+  width: 100%;
+  background-color: white;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.strap.table td, .strap.table th {
+  border-bottom: 1px solid #ced4da;
+  padding: 0.75rem;
+}
+.strap.table.small td, .strap.table.small th {
+  padding: 0.35rem 0.75rem;
+}
+.strap.table.bordered {
+  margin-top: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+.strap.table.bordered:not(.foot-shown) tr:last-child td, .strap.table.bordered tfoot tr:last-child th {
+  border-bottom: 0;
+}
+.strap.table.striped tr:nth-child(2n) td {
+  background-color: #f0f0f0;
+}
+.strap.table.celled th:not(:first-child), .strap.table.celled td:not(:first-child) {
+  border-left: 1px solid #ced4da;
+}
+.strap.table.single-line {
+  white-space: nowrap;
+}
+.strap.table.single-line.fixed td, .strap.table.single-line.fixed th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.strap.table.fixed {
+  table-layout: fixed;
+}
+.strap.table tr:not(:last-child) th.pagination-th {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.strap.table th.pagination-th {
+  text-align: center;
+}
+.strap.table th.pagination-th > .strap.pagination {
+  display: inline-flex;
+}
+.strap.table tr:not(:first-child) th.page-th {
+  padding-top: 0;
+}
+.strap.table th.page-th {
+  text-align: right;
+  font-weight: normal;
+  font-style: italic;
+}
+.strap.table th.sortable {
+  cursor: pointer;
+}
+.strap.table th.sortable:hover {
+  background-color: #f2f2f2;
+}
+.strap.table th.sortable > .strap.icon {
+  opacity: 0.8;
+}
+.strap.table.selectable tr:hover td {
+  background-color: #f2f2f2;
+}
+.strap.table.cell-selectable td:hover {
+  background-color: #f2f2f2;
+}
+
+.strap.table-edit > .column-edit {
+  display: flex;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+.strap.table-edit > .column-edit > * {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ced4da;
+}
+.strap.table-edit > .column-edit > *.selected {
+  z-index: 2;
+  border-color: #b1bbc4;
+  box-shadow: 0 0 4px 1px #94a1ae;
+}
+.strap.table-edit > .column-edit > *.selected > * {
+  background-color: #d7d7d7;
+}
+.strap.table-edit > .column-edit > *.selected + * {
+  border-left: 0;
+}
+.strap.table-edit > .column-edit > *:not(:last-child):not(.selected) {
+  border-right: 0;
+}
+.strap.table-edit > .column-edit > *:first-child {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.strap.table-edit > .column-edit > *:last-child {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.strap.table-edit > .column-edit > * > * {
+  background-color: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+}
+
+.strap.context-menu {
+  position: absolute;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  user-select: none;
+  -moz-user-select: none;
+  box-shadow: 3px 3px 5px #91979c;
+  z-index: 40;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+.strap.context-menu:not(.shown) {
+  display: none;
+}
+.strap.context-menu > *:not(.divider) {
+  display: block;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.strap.context-menu > *.strap.divider {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+.strap.context-menu > *.strap.link {
+  color: inherit;
+}
+.strap.context-menu > *.strap.link:not(.icon):hover {
+  color: inherit;
+}
+.strap.context-menu > *.strap.link:not(.disabled):hover {
+  background-color: #f2f2f2;
+}
+.strap.context-menu > *.strap.link:not(.disabled):active, .strap.context-menu > *.strap.link:not(.disabled):focus, .strap.context-menu > *.strap.link:not(.disabled).active {
+  background-color: #e6e6e6;
+}
+
+.strap.pagination {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.strap.pagination > .strap.button:not(:last-child):not(:first-child) {
+  padding: 0.5rem;
+}
+.strap.pagination > .strap.button:not(:last-child):not(:first-child) > span {
+  min-width: 1.5rem;
+  display: block;
+}
+
+.strap.grid-layout {
+  display: grid;
+}
+
+.strap.grid-layout-item {
+  position: relative;
+  z-index: 1;
+}
+.strap.grid-layout-item.placeholder {
+  border: 1px dashed #252627;
+  background: none;
+  z-index: 0;
+}
+.strap.grid-layout-item.interacted {
+  opacity: 0.5;
+  z-index: 2;
+}
+.strap.grid-layout-item > .resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15px;
+  height: 15px;
+  cursor: se-resize;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='15' height='15'><path fill='none' stroke='rgba(100,100,100,0.7)' d='M2 11 L11 11 L11 2'></path></svg>");
+}
+@media (hover: none), (hover: on-demand), (pointer: none), (pointer: coarse) {
+  .strap.grid-layout-item > .resize-handle {
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><path fill='none' stroke='rgba(100,100,100,0.7)' d='M4 16 L16 16 L16 4'></path></svg>");
+  }
+}
+
+.strap.card {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+.strap.card > * {
+  padding: 0.5rem;
+}
+.strap.card > :not(:first-child) {
+  border-top: 1px solid #ced4da;
+}
+.strap.card > .card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.strap.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+.strap.stat > .label {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.strap.stat > .value, .strap.stat > .no-value {
+  text-align: center;
+  font-weight: 400;
+}
+.strap.stat > .value {
+  line-height: 4rem;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+.strap.stat > .value:empty + .no-value {
+  display: block;
+}
+.strap.stat > .no-value {
+  display: none;
+  font-style: italic;
+  line-height: 3rem;
+  font-size: 3rem;
+}
+.strap.stat.small > .value {
+  line-height: 3rem;
+  font-size: 3rem;
+}
+.strap.stat.small > .no-value {
+  line-height: 2.5rem;
+  font-size: 2.5rem;
+}
+.strap.stat.smaller {
+  padding: 0 0.25rem;
+}
+.strap.stat.smaller > .label {
+  line-height: 1rem;
+  font-size: 0.9rem;
+}
+.strap.stat.smaller > .value, .strap.stat.smaller .no-value {
+  line-height: 2rem;
+  font-size: 2rem;
+}
+
+.strap.markdown-block {
+  padding: 0 1rem;
+}
+.strap.markdown-block > .strap.header {
+  padding-left: 1rem;
+}
+.strap.markdown-block > pre {
+  border-radius: 0.25rem;
+}
+.strap.markdown-block > blockquote {
+  border-radius: 0.25rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ced4da;
+  font-style: italic;
+  margin: 2rem 0;
+  padding: 1.5rem 1.5rem 1.5rem 4rem;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes progress-striped-active {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 35px 35px;
+  }
+}
+@keyframes progress-striped-active-reverse {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -35px -35px;
+  }
+}
+@keyframes progress-glow-active {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+  }
+}
+@keyframes progress-glow-active-reverse {
+  0% {
+    opacity: 0;
+    width: 100%;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+.window-reduce-enter-active, .window-reduce-leave-active {
+  transition: opacity 0.2s;
+}
+
+.window-reduce-enter, .window-reduce-leave-to {
+  opacity: 0;
+}
+
+.rolling {
+  -webkit-animation: rolling .6s linear;
+  animation: rolling .6s linear;
+}
+
+.rolling.loader::after, .rolling.loading::after {
+  -webkit-animation: rolling .6s linear;
+  animation: rolling .6s linear;
+}
+
+/*# sourceMappingURL=semstrap.css.map */

@@ -1,0 +1,119 @@
+{
+  "brand": "Semstrap demo",
+  "common": {
+    "lang": "Language",
+    "loading": "Please wait while we load everything for you !",
+    "pageEditMode": "Page edit mode",
+    "addElement": "Add an element",
+    "bindingsWindow": "Page fields",
+    "knowMore": "Know more",
+    "help": "Help",
+    "dynamicPageHelp": "Dynamic page help",
+    "goToSource": "Want to see the source code ? <a class=\"strap link\" href=\"https://github.com/GoverAnter/semstrap-demo\">Click here !</a>"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "totalSales": {
+      "identifier": "Sales done",
+      "description": "The number of sales made so far."
+    },
+    "totalProducts": {
+      "identifier": "Products registered",
+      "description": "The number of registered products."
+    },
+    "totalEarnings": {
+      "identifier": "Earned so far",
+      "description": "The cumulated total of all sales."
+    },
+    "totalProductsSold": {
+      "identifier": "Products sold",
+      "description": "The cumulated total of all products sold."
+    },
+    "averageProductsPerSale": {
+      "identifier": "Products per sale",
+      "description": "The average per-sale product count."
+    },
+    "bestSeller": {
+      "identifier": "Best seller",
+      "description": "The best of the bests."
+    },
+    "salesPerDay": {
+      "identifier": "Sales per day",
+      "description": "The number of sales per day."
+    },
+    "soldPerDay": {
+      "identifier": "Products sold per day",
+      "description": "The number of products sold per day."
+    },
+    "earningsPerDay": {
+      "identifier": "Earned per day",
+      "description": "The total earnigns per day."
+    }
+  },
+  "products": {
+    "title": "Products",
+    "priceWithoutVAT": "Price (VAT excl.)",
+    "VAT": "VAT",
+    "priceWithVAT": "Price (VAT incl.)",
+    "productList": "Product list",
+    "bindings": {
+      "product": {
+        "reference": {
+          "identifier": "Reference",
+          "description": "Our internal reference for the product. Does not match supplier reference."
+        },
+        "name": {
+          "identifier": "Product name",
+          "description": "The common name of the product."
+        },
+        "description": {
+          "identifier": "Description",
+          "description": "A basic description of the product."
+        },
+        "price": {
+          "identifier": "Sell price",
+          "description": "The price at which we sell the product, without VAT."
+        }
+      },
+      "sale": {
+        "date": {
+          "identifier": "Date",
+          "description": "The date at which this sale was done."
+        },
+        "billingId": {
+          "identifier": "Billing identifier",
+          "description": "The unique billing id of this sale."
+        },
+        "customer": {
+          "identifier": "Customer",
+          "description": "The name of the customer who bought products."
+        },
+        "products": {
+          "identifier": "Products",
+          "description": "The products that were billed."
+        },
+        "total": {
+          "identifier": "Total",
+          "description": "The total amount of the transaction."
+        }
+      }
+    }
+  },
+  "sales": {
+    "title": "Sales",
+    "totalExclVAT": "Total (excl. VAT)",
+    "productCount": "Products sold",
+    "date": "Sale date",
+    "customer": "Customer",
+    "salesList": "Sales list"
+  },
+  "about": {
+    "title": "About Semstrap",
+    "demoWindow": {
+      "title": "Demo window"
+    }
+  },
+  "aboutMe": {
+    "title": "About me"
+  }
+}

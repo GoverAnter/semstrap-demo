@@ -1,0 +1,3 @@
+<dynamic-element-wrapper :el="wrapperParam">
+  <strap-table v-if="saleProducts" :items="saleProducts" :columns="columns" selectable bordered enable-row-events @row-click="goToProduct" />
+</dynamic-element-wrapper>
