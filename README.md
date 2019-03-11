@@ -17,7 +17,7 @@ Well, you can't, because it needs private dependencies (the `@inveasy/semstrap` 
 Don't. You can't !
 I love the fact that i hate companies that open sourced the less interesting part of their software, and i just did the same !
 
-## Licence
+## License
 
 MIT. You can't use anything interesting in this demo anyway...
 Except for the markdown part ? ;p
