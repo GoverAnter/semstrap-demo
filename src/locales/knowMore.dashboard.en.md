@@ -6,7 +6,5 @@ In this demo, these values are computed when page is rendered, but these are the
 
 ## Technical side
 
-Please refer to the [About](/about) page for more informations about dynamic pages.
-
 This page can become completely dynamic if, in addition to data aggregation, back-end generates bindings. This could permit easy and inifinite schema evolution without the hassle of modifying (and building, deploying) the front-end project.
 This page also shows bindings flexibility : the developer can add special/computed/server-rendered/API called data by just creating bindings, giving end-user the power to bind and use these values to compute something else.

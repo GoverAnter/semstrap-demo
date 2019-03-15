@@ -6,7 +6,5 @@ Ces valeurs, ici calculées à l'affichage de page, sont normalement des donnée
 
 ## Technique
 
-Référez vous à la page [A propos](/about) pour plus de détails sur le fonctionnement des pages dynamiques.
-
 Cette page peut devenir completement dynamique si en plus de générer les données, le back-end se charge aussi de générer les bindings, ce qui donne une possibilité d'évolution de schéma infinie sans modification du front-end.
-Cette page montre aussi la flexibilité des bindings : si le développeur a besoin de rajouter des champs particuliers/pré-calculés/serveur/d'autres APIs, c'est possible simplement !!
+Cette page montre aussi la flexibilité des bindings : si le développeur a besoin de rajouter des champs particuliers/pré-calculés/serveur/d'autres APIs, c'est possible simplement.

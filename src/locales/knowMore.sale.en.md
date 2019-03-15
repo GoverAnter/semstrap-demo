@@ -11,8 +11,6 @@ This shows the real power of dynamic pages : not only you can arrange things to 
 
 ## Technical side
 
-Please refer to the [About](/about) page for more informations about dynamic pages.
-
 At the core, this page only gives the user access to a sale object (through bindings). And, well, that's all !
 This page is the main example of the usage of dynamic pages. They give the ability to the end-user to display data the way they want, without any developer intervention.
 

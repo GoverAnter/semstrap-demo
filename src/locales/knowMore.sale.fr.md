@@ -12,8 +12,6 @@ Tout ceci montre l'intéret des pages dynamiques : non seulement vous pouvez arr
 
 ## Technique
 
-Référez vous à la page [A propos](/about) pour plus de détails sur le fonctionnement des pages dynamiques.
-
 A la base, cette page donne à l'utilisateur accès aux champs de l'objet vente via les bindings. Et c'est tout !
 Cette page est le parfait exemple pour montrer à quoi sont destinées les pages dynamiques. Elles donnent le pouvoir à l'utilisateur de manier et d'afficher les données comme il le souhaite, sans l'intervention d'un développeur.
 

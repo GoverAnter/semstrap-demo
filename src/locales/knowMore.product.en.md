@@ -20,8 +20,6 @@ Try to change the product price and see the price with VAT change accordingly !
 
 ## Technical side
 
-Please refer to the [About](/about) page for more informations about dynamic pages.
-
 At the core, this page only gives the user access to a product (through bindings). And, well, that's all !
 This page is the main example of the usage of dynamic pages. They give the ability to the end-user to display data the way they want, without any developer intervention.
 
