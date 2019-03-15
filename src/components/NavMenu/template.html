@@ -6,8 +6,8 @@
 
   <div class="spacer"></div>
 
-  <strap-link router-link route-selected to="/about" :selected="$route.path === '/about'">{{ $t('about.title') }}</strap-link>
-  <strap-link router-link route-selected to="/about-me">{{ $t('aboutMe.title') }}</strap-link>
+  <!-- <strap-link router-link route-selected to="/about" :selected="$route.path === '/about'">{{ $t('about.title') }}</strap-link>
+  <strap-link router-link route-selected to="/about-me">{{ $t('aboutMe.title') }}</strap-link> -->
   <div class="menu-dropdown mobile-hidden">
     <strap-dropdown class="white" :items="locales" :placeholder="$t('common.lang')" :value="$i18n.locale" @change="changeLocale" />
   </div>

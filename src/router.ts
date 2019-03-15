@@ -32,15 +32,15 @@ export default new Router({
       component: () => import(/* webpackChunkName: "sale" */ './views/Sale/component'),
       props: true
     },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import(/* webpackChunkName: "about" */ './views/About/component')
-    },
-    {
-      path: '/about-me',
-      name: 'about-me',
-      component: () => import(/* webpackChunkName: "about-me" */ './views/AboutMe/component')
-    }
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   component: () => import(/* webpackChunkName: "about" */ './views/About/component')
+    // },
+    // {
+    //   path: '/about-me',
+    //   name: 'about-me',
+    //   component: () => import(/* webpackChunkName: "about-me" */ './views/AboutMe/component')
+    // }
   ]
 });
